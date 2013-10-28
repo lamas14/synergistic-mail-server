@@ -10,8 +10,10 @@ import org.springframework.stereotype.Service;
 
 import com.synergistic.it.dao.CustomerDao;
 import com.synergistic.it.email.spring.form.CustomerForm;
+import com.synergistic.it.email.spring.form.EmailForm;
 import com.synergistic.it.email.spring.form.FolderForm;
 import com.synergistic.it.hibernate.entity.CustomerEntity;
+import com.synergistic.it.hibernate.entity.EmailEntity;
 import com.synergistic.it.hibernate.entity.FolderEntity;
 import com.synergistic.it.service.CustomerService;
 
@@ -62,6 +64,18 @@ public class CustomerServiceImpl implements CustomerService {
 			folderForms.add(folderForm);
 		}
 		return folderForms;
+	}
+
+	@Override
+	public List<EmailForm> getEmails(String folder) {
+		List<EmailEntity> emailEntities = customerDao.findEmails(folder);
+		List<EmailForm> emailForms = new ArrayList<EmailForm>();
+		for (EmailEntity emailEntity : emailEntities) {
+			EmailForm ef = new EmailForm();
+			BeanUtils.copyProperties(emailEntity, ef);
+			emailForms.add(ef);
+		}
+		return emailForms;
 	}
 
 	

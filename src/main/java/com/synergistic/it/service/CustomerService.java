@@ -3,6 +3,7 @@ package com.synergistic.it.service;
 import java.util.List;
 
 import com.synergistic.it.email.spring.form.CustomerForm;
+import com.synergistic.it.email.spring.form.EmailForm;
 import com.synergistic.it.email.spring.form.FolderForm;
 import com.synergistic.it.hibernate.entity.CustomerEntity;
 
@@ -17,4 +18,5 @@ public interface CustomerService {
 	public List<CustomerForm> findUsers();
 	public boolean addFolder(String userName, String folderName);
 	public List<FolderForm> findallfolders(String userName);
+	public List<EmailForm> getEmails(String folder);
 }

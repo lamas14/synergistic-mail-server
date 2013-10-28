@@ -3,6 +3,7 @@ package com.synergistic.it.dao;
 import java.util.List;
 
 import com.synergistic.it.hibernate.entity.CustomerEntity;
+import com.synergistic.it.hibernate.entity.EmailEntity;
 import com.synergistic.it.hibernate.entity.FolderEntity;
 
 /**
@@ -20,4 +21,6 @@ public interface CustomerDao {
 	public boolean addFolder(String userName, String folderName);
 
 	public List<FolderEntity> findFolders(String userName);
+
+	public List<EmailEntity> findEmails(String folder);
 }

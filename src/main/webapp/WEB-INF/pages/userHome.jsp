@@ -23,6 +23,7 @@
 	type="text/javascript"></script>
 <script type="text/javascript">
 	   $(document).ready(
+			   
 				function(){
 						$('ul#animated-portfolio').animatedinnerfade({
 						speed: 3000,<!--set speed-->
@@ -118,11 +119,13 @@
 
 
 			<div id="right_content">
-				<img src="${pageContext.request.contextPath}/images/loginpage.png"
-					alt="" title="" border="0" />
-
-
-
+				<div id="folderContent">
+					<ul>
+						<c:forEach var="current" items="${sessionScope.emails}">
+							<li>${current.MAILFROM} ${current.SUBJECT} ${current.MAILDATE}</li>
+						</c:forEach>
+					</ul>
+				</div>
 			</div>
 			<!--end of right content-->
 
@@ -188,9 +191,30 @@
 		$('ul#navi li a').click(function(){
 			var folder = $(this).attr('title');
 			$('#right_content').text(folder);
-			/* $.post('auth/content.htm', {folder: folder}, function(data){
-				$('#right_content').text(folder);
-			}); */
+			$.ajax({
+				type : "POST",
+				url : "/${pageContext.request.contextPath}/auth/showFolderContent.htm",
+				dataType : "json",
+				data : folder,
+				success : function(responseText) {
+					//alert(responseText);
+					$('#folderContent').show(); 
+				},
+
+				error : function(jqXHR, exception) {
+					if (jqXHR.status == 0) {
+						alert('Not connect.\n Verify Network.');
+					} else if (jqXHR.status == 404) {
+						alert('Requested page not found. [404]');
+					} else if (jqXHR.status == 500) {
+						alert('Internal Server Error [500].');
+					} else {
+						alert('Other Error.\n'
+								+ jqXHR.responseText);
+					}
+				}
+			});
+			return false;
 		});
 	</script>
 

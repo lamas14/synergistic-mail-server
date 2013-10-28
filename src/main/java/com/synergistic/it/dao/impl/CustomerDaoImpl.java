@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 import com.synergistic.it.constant.EMailServerConstant;
 import com.synergistic.it.dao.CustomerDao;
 import com.synergistic.it.hibernate.entity.CustomerEntity;
+import com.synergistic.it.hibernate.entity.EmailEntity;
 import com.synergistic.it.hibernate.entity.FolderEntity;
 import com.synergistic.it.util.DateUtils;
 
@@ -76,6 +77,12 @@ public class CustomerDaoImpl extends HibernateDaoSupport implements CustomerDao 
 	@Override
 	public List<FolderEntity> findFolders(String userName) {
 		List<FolderEntity> entities = getHibernateTemplate().find("from FolderEntity as fe where fe.uName=?", userName);
+		return entities;
+	}
+
+	@Override
+	public List<EmailEntity> findEmails(String folder) {
+		List<EmailEntity> entities = getHibernateTemplate().find("from EmailEntity as ee where ee.FOLDER=?",folder);
 		return entities;
 	}
 }
