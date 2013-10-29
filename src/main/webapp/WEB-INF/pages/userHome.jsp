@@ -145,29 +145,9 @@
 			<!--end of left content-->
 			<div id="right_content">
 				<center>
-					<h2>${message}</h2>
+					<h3>${message}</h3>
+					<p>${error}</p>
 				</center>
-				<div id="folderContent">
-					<table>
-						<tr>
-							<th width="10%"></th>
-							<th width="20%">Date</th>
-							<th width="20%">From</th>
-							<th width="20%">To</th>
-							<th width="30%">Subject</th>
-						</tr>
-						<c:forEach var="item" items="${emailForms}">
-							<tr>
-								<td><input type="checkbox" name="mailId"
-									value="${item.MAILID}" /></td>
-								<td>${item.MAILDATE}</td>
-								<td>${item.MAILFROM}</td>
-								<td>${item.MAILTO}</td>
-								<td>${item.SUBJECT}</td>
-							</tr>
-						</c:forEach>
-					</table>
-				</div>
 			</div>
 			<!--end of right content-->
 

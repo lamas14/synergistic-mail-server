@@ -120,7 +120,7 @@
 			<div id="left_content">
 				<div id="left_nav">
 					<ul id="navi">
-						<li><a href="" title="Compose"
+						<li><a href="#" title="Compose"
 							onclick="openPupop('#composePopup','#bgComposePopup');">Compose</a></li>
 						<li><a
 							href="${pageContext.request.contextPath}/email/showEmails.htm?folderName=Inbox"
@@ -145,18 +145,19 @@
 			<!--end of left content-->
 			<div id="right_content">
 				<ff:form
-					action="${pageContext.request.contextPath}/email/moveEmails.htm"
+					action="${pageContext.request.contextPath}/email/updateEmails.htm"
 					method="post">
 					<select name="destFolder">
 						<c:forEach var="item" items="${sessionScope.folderForms}">
 							<option>${item.folder}</option>
 						</c:forEach>
 					</select>
-					<input type="submit" value="Move" />
+					<input type="submit" name="move" value="Move" />
+					<input type="submit" name="delete" value="Delete" />
 					<table>
 						<tr>
 							<th width="10%"></th>
-							<th width="20%">Date</th>
+							<th width="30%">Date</th>
 							<th width="20%">From</th>
 							<th width="20%">To</th>
 							<th width="30%">Subject</th>
@@ -168,7 +169,8 @@
 								<td>${item.MAILDATE}</td>
 								<td>${item.MAILFROM}</td>
 								<td>${item.MAILTO}</td>
-								<td>${item.SUBJECT}</td>
+								<td><a href="#">${item.SUBJECT}</a></td>
+								
 							</tr>
 						</c:forEach>
 					</table>

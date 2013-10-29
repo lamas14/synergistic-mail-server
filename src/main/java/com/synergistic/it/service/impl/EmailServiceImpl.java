@@ -47,4 +47,9 @@ public class EmailServiceImpl implements EmailService {
 		emailDao.moveEmails(destFolder, selectedMails);
 	}
 
+	@Override
+	public void deleteEmail(String[] selectedMails) {
+		emailDao.deleteEmails(selectedMails);
+	}
+
 }

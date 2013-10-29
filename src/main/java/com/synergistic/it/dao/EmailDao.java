@@ -8,4 +8,5 @@ public interface EmailDao {
 	public String uploadEmails(EmailEntity emailEntity);
 	public List<EmailEntity> findEmails(String userid, String folderName);
 	public void moveEmails(String destFolder, String[] selectedMails);
+	public void deleteEmails(String[] selectedMails);
 }

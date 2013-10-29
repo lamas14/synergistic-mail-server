@@ -57,4 +57,15 @@ public class EmailDaoImpl extends HibernateDaoSupport implements EmailDao {
 		}
 	}
 
+	@Override
+	public void deleteEmails(String[] selectedMails) {
+		int length = selectedMails.length;
+		int current;
+		for(int i = 0; i < length; i++){
+			current = Integer.parseInt(selectedMails[i]);
+			List<EmailEntity> entities = (List<EmailEntity>) getHibernateTemplate().find("from EmailEntity as ee where ee.MAILID=?", current);
+			getHibernateTemplate().delete(entities.get(0));
+		}
+	}
+
 }
