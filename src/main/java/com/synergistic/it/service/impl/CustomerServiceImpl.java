@@ -50,36 +50,6 @@ public class CustomerServiceImpl implements CustomerService {
 		return customerForms;
 	}
 
-	@Override
-	public boolean addFolder(String userName, String folderName) {
-		return customerDao.addFolder(userName, folderName);
-	}
-
-	public List<FolderForm> findallfolders(String userName) {
-		List<FolderEntity> folderEntities = customerDao.findFolders(userName);
-		List<FolderForm> folderForms = new ArrayList<FolderForm>();
-		for (FolderEntity folderEntity : folderEntities) {
-			FolderForm folderForm = new FolderForm();
-			BeanUtils.copyProperties(folderEntity, folderForm);
-			folderForms.add(folderForm);
-		}
-		return folderForms;
-	}
-
-	@Override
-	public List<EmailForm> getEmails(String folder) {
-		List<EmailEntity> emailEntities = customerDao.findEmails(folder);
-		List<EmailForm> emailForms = new ArrayList<EmailForm>();
-		for (EmailEntity emailEntity : emailEntities) {
-			EmailForm ef = new EmailForm();
-			BeanUtils.copyProperties(emailEntity, ef);
-			emailForms.add(ef);
-		}
-		return emailForms;
-	}
-
-	
-
 	
 
 }

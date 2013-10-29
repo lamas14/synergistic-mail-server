@@ -34,18 +34,8 @@
 	margin-bottom: 20px;
 }
 
-#popupContactClose {
-	font-size: 14px;
-	line-height: 14px;
-	right: 6px;
-	top: 4px;
-	position: absolute;
-	color: #6fa5fd;
-	font-weight: 700;
-	display: block;
-}
-
 #button {
 	text-align: center;
 	margin: 100px;
 }
+

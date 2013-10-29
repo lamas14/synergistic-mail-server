@@ -16,7 +16,5 @@ public interface CustomerService {
 	public String uploadCustomer(CustomerForm customerForm);
 	public String authUser(String username, String password);
 	public List<CustomerForm> findUsers();
-	public boolean addFolder(String userName, String folderName);
-	public List<FolderForm> findallfolders(String userName);
-	public List<EmailForm> getEmails(String folder);
+	
 }

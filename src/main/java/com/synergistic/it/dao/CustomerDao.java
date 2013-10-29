@@ -18,9 +18,4 @@ public interface CustomerDao {
 
 	public List<CustomerEntity> findUsers();
 
-	public boolean addFolder(String userName, String folderName);
-
-	public List<FolderEntity> findFolders(String userName);
-
-	public List<EmailEntity> findEmails(String folder);
 }

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/java/com/synergistic/it/service/impl
+END
+CustomerServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/java/com/synergistic/it/service/impl/CustomerServiceImpl.java
+END
+SentEmailServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/java/com/synergistic/it/service/impl/SentEmailServiceImpl.java
+END

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/WEB-INF/pages
+END
+uploadImage.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/WEB-INF/pages/uploadImage.jsp
+END
+userHome.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/5/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/WEB-INF/pages/userHome.jsp
+END
+login.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/5/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/WEB-INF/pages/login.jsp
+END
+userRegistration.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/WEB-INF/pages/userRegistration.jsp
+END
+sessionTimeOut.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/!svn/ver/5/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/WEB-INF/pages/sessionTimeOut.jsp
+END

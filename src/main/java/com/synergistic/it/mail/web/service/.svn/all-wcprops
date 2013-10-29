@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/java/com/synergistic/it/mail/web/service
+END
+CustomerFormListWrapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/java/com/synergistic/it/mail/web/service/CustomerFormListWrapper.java
+END
+SoapEmailWebService.java
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/java/com/synergistic/it/mail/web/service/SoapEmailWebService.java
+END
+SoapEmailWebServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/java/com/synergistic/it/mail/web/service/SoapEmailWebServiceImpl.java
+END

@@ -5,6 +5,26 @@
 	id="WebApp_ID" version="2.5">
 
 
+<context-param>
+    <param-name>allowAccess</param-name>
+    <param-value>/auth/login.htm,/customer/addCustomer.htm,/auth/sessionTimeOut.htm,/customer/uploadImage.htm</param-value>
+  </context-param>
+
+  <!-- Time is in minutes -->
+  <session-config>
+        <session-timeout>15</session-timeout>
+  </session-config>
+  
+    <filter>
+    <filter-name>synerFilter</filter-name>
+    <filter-class>com.synergistic.it.email.server.filter.SynergisticitMailFilter</filter-class>
+  </filter>
+  
+  <filter-mapping>
+    <filter-name>synerFilter</filter-name>
+    <url-pattern>*.htm</url-pattern>
+  </filter-mapping>
+
 <!-- 
 ApplicationContext applicationContext=new ClassPathXmlApplicationContext("/WEB-INF/context/email-server-application-context.xml");
  -->	
@@ -36,7 +56,7 @@ ApplicationContext applicationContext=new ClassPathXmlApplicationContext("/WEB-I
 	</servlet-mapping>
 
 	<welcome-file-list>
-		<welcome-file>home.jsp</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
 	
 	

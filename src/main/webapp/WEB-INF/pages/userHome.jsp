@@ -7,8 +7,8 @@
 <title>Greefies Css Template</title>
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/style.css" media="screen" />
-<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/css/reset.css" />
+<%-- <link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/css/reset.css" /> --%>
 <!-- Our CSS -->
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/banks.css" />
@@ -22,9 +22,29 @@
 <script src="${pageContext.request.contextPath}/js/popup.js"
 	type="text/javascript"></script>
 <script type="text/javascript">
+	
+	  function openPupop(popupId,bgPopupId){
+		    centerPopup(popupId,bgPopupId);
+			//load popup
+		    loadPopup(popupId,bgPopupId);
+      }
+
 	   $(document).ready(
-			   
+			//   $("#folderContent").hide();
 				function(){
+					$("#composePopupClose").click(function(){
+						disablePopup('#composePopup','#bgComposePopup');
+					});
+					
+					$("#createLabelPopupClose").click(function(){
+						disablePopup('#createLabelPopup','#bgComposePopup');
+					});
+					
+					//Click out event!
+					$("#bgComposePopup").click(function(){
+						disablePopup('#composePopup','#bgComposePopup');
+					});
+					
 						$('ul#animated-portfolio').animatedinnerfade({
 						speed: 3000,<!--set speed-->
 						timeout: 5000,<!--set Time-->
@@ -63,7 +83,8 @@
 					<li><a href="services.html" title="">services</a></li>
 					<li><a href="#" title="">clients</a></li>
 					<li><a href="#" title="">testimonials</a></li>
-					<li><a class="current" href="contact.html" title="">contact
+					<li><a class="current"
+						href="${pageContext.request.contextPath}/auth/logout.htm" title="">logout
 							us</a></li>
 				</ul>
 			</div>
@@ -99,32 +120,53 @@
 			<div id="left_content">
 				<div id="left_nav">
 					<ul id="navi">
-						<li><a href="home.html" title="">Compose</a></li>
-						<li><a href="home.html" title="">Inbox</a></li>
-						<li><a href="services.html" title="">Send Item</a></li>
+						<li><a href="#" title="Compose"
+							onclick="openPupop('#composePopup','#bgComposePopup');">Compose</a></li>
+						<li><a
+							href="${pageContext.request.contextPath}/email/showEmails.htm?folderName=Inbox"
+							title="">Inbox</a></li>
+						<li><a
+							href="${pageContext.request.contextPath}/email/showEmails.htm?folderName=Send_Item"
+							title="">Send Item</a></li>
 						<li><a class="current" href="#" title="">Settings</a></li>
 
-						<c:forEach var="current" items="${sessionScope.folders}">
-							<li><a href="#" title="${current.folder}">${current.folder}</a></li>
+						<c:forEach var="item" items="${sessionScope.folderForms}">
+							<li><a
+								href="${pageContext.request.contextPath}/email/showEmails.htm?folderName=${item.folder}"
+								title="${item.folder}">${item.folder}</a></li>
 						</c:forEach>
 						<!-- Folder List -->
-						<li><a href="#" onclick="onhref();" title="">Create Label</a></li>
+						<li><a href="#" title="Create Label"
+							onclick="openPupop('#createLabelPopup','#bgComposePopup');">Create
+								Label</a></li>
 					</ul>
 				</div>
-
-
-
 			</div>
 			<!--end of left content-->
-
-
 			<div id="right_content">
+				<center>
+					<h2>${message}</h2>
+				</center>
 				<div id="folderContent">
-					<ul>
-						<c:forEach var="current" items="${sessionScope.emails}">
-							<li>${current.MAILFROM} ${current.SUBJECT} ${current.MAILDATE}</li>
+					<table>
+						<tr>
+							<th width="10%"></th>
+							<th width="20%">Date</th>
+							<th width="20%">From</th>
+							<th width="20%">To</th>
+							<th width="30%">Subject</th>
+						</tr>
+						<c:forEach var="item" items="${emailForms}">
+							<tr>
+								<td><input type="checkbox" name="mailId"
+									value="${item.MAILID}" /></td>
+								<td>${item.MAILDATE}</td>
+								<td>${item.MAILFROM}</td>
+								<td>${item.MAILTO}</td>
+								<td>${item.SUBJECT}</td>
+							</tr>
 						</c:forEach>
-					</ul>
+					</table>
 				</div>
 			</div>
 			<!--end of right content-->
@@ -154,14 +196,12 @@
 
 
 	<!--  Create Label POPUP STARTS HERE--------------------------------------------------------- -->
-	<div id="popupContact">
-		<a id="popupContactClose">x</a>
+	<div id="createLabelPopup">
+		<a id="createLabelPopupClose">x</a>
 		<h1>Create Label</h1>
-		<p id="contactArea">
-
-
+		<p id="popupContact">
 			<ff:form
-				action="${pageContext.request.contextPath}/auth/addFolder.htm"
+				action="${pageContext.request.contextPath}/folder/addFolder.htm"
 				method="post">
 
 				<table align="center" border="0">
@@ -176,18 +216,60 @@
 	Some Dynamic Control Here
 	<input type="hidden" name="bank">   -->
 					</tr>
-
 				</table>
 			</ff:form>
-
-
 		</p>
 	</div>
-
 	<div id="backgroundPopup"></div>
 	<!-- Create Label Popup ends here -->
+	<div id="composePopup">
+		<a id="composePopupClose">x</a>
+		<h1>Compose</h1>
+		<!--  <a id="minimize">-</a>  -->
+		<p id="popupContact">
+			<ff:form
+				action="${pageContext.request.contextPath}/email/sentEmail.htm"
+				method="post" commandName="sentEmailForm">
+				<table align="center" size="15" border="0">
+					<tr>
+						<td>To</td>
+						<td><input type="text" name="MAILTO" id="t1" size="33" /></td>
+					</tr>
 
-	<script>
+					<tr>
+						<td>Cc</td>
+						<td><input type="text" name="MAILCC" id="t1" size="33" /></td>
+					</tr>
+
+					<tr>
+						<td>Bcc</td>
+						<td><input type="text" name="MAILBCC" id="t3" size="33" /></td>
+					</tr>
+
+					<tr>
+						<td>Subject</td>
+						<td><input type="text" name="SUBJECT" id="t3" size="33" /></td>
+					</tr>
+
+
+
+					<tr>
+						<td>Message</td>
+						<td><textarea name="MAILDATA" id="t1" rows="4" cols="30"></textarea>
+						</td>
+					</tr>
+					<tr>
+
+						<td align="center" colspan="2"><input type="submit"
+							value="Send" class="button" /></td>
+					</tr>
+				</table>
+			</ff:form>
+		</p>
+	</div>
+	<div id="backgroundPopup"></div>
+
+	<!-- <script>
 		$('ul#navi li a').click(function(){
 			var folder = $(this).attr('title');
 			$('#right_content').text(folder);
@@ -216,7 +298,7 @@
 			});
 			return false;
 		});
-	</script>
+	</script> -->
 
 </body>
 </html>

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/java/com/synergistic/it/hibernate/entity
+END
+EmailEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/java/com/synergistic/it/hibernate/entity/EmailEntity.java
+END
+FolderEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/java/com/synergistic/it/hibernate/entity/FolderEntity.java
+END
+CustomerEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/java/com/synergistic/it/hibernate/entity/CustomerEntity.java
+END

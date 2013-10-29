@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/WEB-INF
+END
+email-server-servlet.xml
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/WEB-INF/email-server-servlet.xml
+END
+web.xml
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/5/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/WEB-INF/web.xml
+END

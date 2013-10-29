@@ -1,4 +1,3 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -26,6 +25,7 @@
 			return false;
 		}
 		document.forms[0].submit();
+
 	}
 </script>
 
@@ -93,13 +93,16 @@
 				<h3 align="center">
 					<font color="black">++++Login Form+++</font>
 				</h3>
+				
+				<h3 align="center">
+					<font color="black">${error}</font>
+				</h3>
 				<form name="loginForm"
 					action="${pageContext.request.contextPath}/auth/login.htm"
 					method="post">
 					<div id="contact_form">
-						<c:out value="${sessionScope.error}"/>
 						<div class="form_row">
-							<label><font color="blue"><b>First Name:</b></font></label><input
+							<label><font color="blue"><b>User ID:</b></font></label><input
 								type="text" name="username" class="contact_input" 
 								style="width:120px;"/><label>@synergisticit.com</label>
 						</div>
@@ -111,6 +114,7 @@
 
 						<div class="send">
 							<a href="#" onclick="submitForm();">Sign in</a>
+							<a href="${pageContext.request.contextPath}/customer/addCustomer.htm" >register</a>
 						</div>
 
 					</div>

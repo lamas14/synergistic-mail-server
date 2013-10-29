@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.synergistic.it.constant.SpringMvcNavigationCont;
 import com.synergistic.it.email.spring.form.FolderForm;
 import com.synergistic.it.service.CustomerService;
+import com.synergistic.it.service.FolderService;
 import com.synergistic.it.util.DESedeEncryption;
 
 @Controller
@@ -23,10 +25,31 @@ public class LoginController {
 	@Autowired
 	@Qualifier("CustomerServiceImpl")
 	private CustomerService customerService;
-
+	
+	@Autowired
+	@Qualifier("FolderServiceImpl")
+	private FolderService folderService;
+	
+	
+	
+	
 	// this page is called when we are displaying our initial registration form
 	@RequestMapping(value = "login.htm", method = RequestMethod.GET)
 	public String showLoginPage() {
+		return SpringMvcNavigationCont.LOGIN_PAGE;
+	}
+
+	// this page is called when we are displaying our initial registration form
+	@RequestMapping(value = "sessionTimeOut.htm", method = RequestMethod.GET)
+	public String sessionTimeOut(Model model) {
+		model.addAttribute("error", "Your session is time out, please log in once again");
+		return SpringMvcNavigationCont.SESSION_TIME_OUT;
+	}
+	
+	// this page is called when we are displaying our initial registration form
+	@RequestMapping(value = "logout.htm", method = RequestMethod.GET)
+	public String logout(HttpSession session) {
+		session.invalidate();
 		return SpringMvcNavigationCont.LOGIN_PAGE;
 	}
 
@@ -35,7 +58,7 @@ public class LoginController {
 	// this page is called when we are displaying our initial registration form
 	@RequestMapping(value = "login.htm", method = RequestMethod.POST)
 	public String postLoginPage(@RequestParam("username") String username,
-			@RequestParam("password") String password, HttpSession session) {
+			@RequestParam("password") String password, HttpSession session,Model model) {
 		try {
 			DESedeEncryption deSedeEncryption = new DESedeEncryption();
 			password = deSedeEncryption.encrypt(password);
@@ -44,13 +67,15 @@ public class LoginController {
 		}
 		String result = customerService.authUser(username, password);
 		if (result.equals("failure")) {
-			session.setAttribute("error", "Invalid User name or Password!");
+			//session.setAttribute("error", "Invalid User name or Password!");
+			model.addAttribute("error", "Invalid User name or Password!");
 			return SpringMvcNavigationCont.LOGIN_PAGE;
 		} else {
-			session.removeAttribute("error");
-			session.setAttribute("userName", username);
-			List<FolderForm> folderForms = customerService.findallfolders(username);
-			session.setAttribute("folders", folderForms);
+			//session.removeAttribute("error");
+			session.setAttribute(SpringMvcNavigationCont.USER_ID, username);
+			session.setAttribute(SpringMvcNavigationCont.USER_PASSWORD, password);
+			List<FolderForm> folderForms = folderService.findallfolders(username);
+			session.setAttribute("folderForms",folderForms);
 			return SpringMvcNavigationCont.USER_HOME;
 		}
 	}

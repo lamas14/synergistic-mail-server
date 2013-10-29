@@ -56,33 +56,4 @@ public class CustomerDaoImpl extends HibernateDaoSupport implements CustomerDao 
 		return entities;
 	}
 
-	@Override
-	public boolean addFolder(String userName, String folderName) {
-		List<FolderEntity> folderEntities = getHibernateTemplate().find(
-				"from FolderEntity as fe where fe.uName=? and fe.folder=?",
-				userName, folderName);
-		if (folderEntities != null && folderEntities.size() > 0) {
-			return false;
-		}else{
-			FolderEntity entity = new FolderEntity();
-			entity.setFolder(folderName);
-			entity.setuName(userName);
-			entity.setDoe(DateUtils.getCurrentDateInSQLFormat());
-			entity.setDom(DateUtils.getCurrentDateInSQLFormat());
-			getHibernateTemplate().save(entity);
-			return true;
-		}
-	}
-
-	@Override
-	public List<FolderEntity> findFolders(String userName) {
-		List<FolderEntity> entities = getHibernateTemplate().find("from FolderEntity as fe where fe.uName=?", userName);
-		return entities;
-	}
-
-	@Override
-	public List<EmailEntity> findEmails(String folder) {
-		List<EmailEntity> entities = getHibernateTemplate().find("from EmailEntity as ee where ee.FOLDER=?",folder);
-		return entities;
-	}
 }

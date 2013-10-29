@@ -1,95 +1,95 @@
 K 25
 svn:wc:ra_dav:version-url
-V 66
-/svn/!svn/ver/16/trunk/loan-application/ezloan/src/main/webapp/css
-END
-welcome.css
-K 25
-svn:wc:ra_dav:version-url
-V 77
-/svn/!svn/ver/3/trunk/loan-application/ezloan/src/main/webapp/css/welcome.css
+V 90
+/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/css
 END
 master.css
 K 25
 svn:wc:ra_dav:version-url
-V 76
-/svn/!svn/ver/3/trunk/loan-application/ezloan/src/main/webapp/css/master.css
+V 101
+/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/css/master.css
 END
-footer.css
+welcome.css
 K 25
 svn:wc:ra_dav:version-url
-V 76
-/svn/!svn/ver/3/trunk/loan-application/ezloan/src/main/webapp/css/footer.css
+V 102
+/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/css/welcome.css
 END
 banks.css
 K 25
 svn:wc:ra_dav:version-url
-V 75
-/svn/!svn/ver/3/trunk/loan-application/ezloan/src/main/webapp/css/banks.css
+V 100
+/svn/!svn/ver/5/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/css/banks.css
 END
-reset1.css
+footer.css
 K 25
 svn:wc:ra_dav:version-url
-V 76
-/svn/!svn/ver/6/trunk/loan-application/ezloan/src/main/webapp/css/reset1.css
-END
-popup.css
-K 25
-svn:wc:ra_dav:version-url
-V 75
-/svn/!svn/ver/3/trunk/loan-application/ezloan/src/main/webapp/css/popup.css
+V 101
+/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/css/footer.css
 END
 form.css
 K 25
 svn:wc:ra_dav:version-url
-V 74
-/svn/!svn/ver/3/trunk/loan-application/ezloan/src/main/webapp/css/form.css
+V 99
+/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/css/form.css
+END
+popup.css
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/5/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/css/popup.css
+END
+reset1.css
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/css/reset1.css
 END
 286142.css
 K 25
 svn:wc:ra_dav:version-url
-V 76
-/svn/!svn/ver/6/trunk/loan-application/ezloan/src/main/webapp/css/286142.css
+V 101
+/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/css/286142.css
 END
 index.css
 K 25
 svn:wc:ra_dav:version-url
-V 75
-/svn/!svn/ver/3/trunk/loan-application/ezloan/src/main/webapp/css/index.css
+V 100
+/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/css/index.css
 END
 286136.css
 K 25
 svn:wc:ra_dav:version-url
-V 76
-/svn/!svn/ver/6/trunk/loan-application/ezloan/src/main/webapp/css/286136.css
+V 101
+/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/css/286136.css
 END
 reset.css
 K 25
 svn:wc:ra_dav:version-url
-V 75
-/svn/!svn/ver/3/trunk/loan-application/ezloan/src/main/webapp/css/reset.css
-END
-register.css
-K 25
-svn:wc:ra_dav:version-url
-V 78
-/svn/!svn/ver/3/trunk/loan-application/ezloan/src/main/webapp/css/register.css
+V 100
+/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/css/reset.css
 END
 addBank.css
 K 25
 svn:wc:ra_dav:version-url
-V 77
-/svn/!svn/ver/3/trunk/loan-application/ezloan/src/main/webapp/css/addBank.css
+V 102
+/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/css/addBank.css
+END
+register.css
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/css/register.css
 END
 invalid.css
 K 25
 svn:wc:ra_dav:version-url
-V 77
-/svn/!svn/ver/3/trunk/loan-application/ezloan/src/main/webapp/css/invalid.css
+V 102
+/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/css/invalid.css
 END
 sort.css
 K 25
 svn:wc:ra_dav:version-url
-V 75
-/svn/!svn/ver/19/trunk/loan-application/ezloan/src/main/webapp/css/sort.css
+V 99
+/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/css/sort.css
 END
