@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Greefies Css Template</title>
+<title>User Home</title>
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/style.css" media="screen" />
 <%-- <link rel="stylesheet" type="text/css"
@@ -21,7 +21,17 @@
 	type="text/javascript"></script> -->
 <script src="${pageContext.request.contextPath}/js/popup.js"
 	type="text/javascript"></script>
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/photoZoom.min.js"></script>	
 <script type="text/javascript">
+
+//submitting the form
+function moveEmails(param){
+	alert("________+++________");
+	document.emailsTable.actionName.value=param;
+   	document.emailsTable.submit();
+   	
+}
 	
 	  function openPupop(popupId,bgPopupId){
 		    centerPopup(popupId,bgPopupId);
@@ -31,6 +41,9 @@
 
 	   $(document).ready(
 				function(){
+					
+					 $("#imageContainer").photoZoom();
+					  
 					$("#composePopupClose").click(function(){
 						disablePopup('#composePopup','#bgComposePopup');
 					});
@@ -69,76 +82,31 @@
 
 <body>
 	<div id="main_container">
-		<div id="header">
-			<div id="logo">
-				<a href="home.html"><img
-					src="${pageContext.request.contextPath}/images/logo.gif" alt=""
-					title="" border="0" /></a>
-			</div>
-
-			<div id="menu">
-				<ul>
-					<li><a href="home.html" title="">home</a></li>
-					<li><a href="services.html" title="">services</a></li>
-					<li><a href="#" title="">clients</a></li>
-					<li><a href="#" title="">testimonials</a></li>
-					<li><a class="current"
-						href="${pageContext.request.contextPath}/auth/logout.htm" title="">logout
-							us</a></li>
-				</ul>
-			</div>
-
-		</div>
-
-		<div class="green_box">
-			<div class="clock">
-				<img src="${pageContext.request.contextPath}/images/emaillogo.jpg"
-					alt="" title="" />
-			</div>
-			<div class="text_content">
-				<h1>Email Server welcomes you!</h1>
-				<p class="green">"This is email server through which you can
-					send email to other poeple within organization."</p>
-
-			</div>
-
-			<div id="right_nav">
-				<ul>
-					<li><a href="home.html" title="">Email Server</a></li>
-					<li><a href="services.html" title="">Database Sever</a></li>
-					<li><a class="current" href="#" title="">Settings</a></li>
-
-				</ul>
-			</div>
-
-
-		</div>
-		<!--end of green box-->
-
-
+		<%@ include file="emailHomeHeader.jsp" %>
 		<div id="main_content">
-			<div id="left_content">
-				<div id="left_nav">
-					<ul id="navi">
+			<div id="email_left_content">
+				<div id="email_nav">
+					<ul>
 						<li><a href="#" title="Compose"
-							onclick="openPupop('#composePopup','#bgComposePopup');">Compose</a></li>
+							onclick="openPupop('#composePopup','#bgComposePopup');"><b>Compose</b></a></li>
 						<li><a
 							href="${pageContext.request.contextPath}/email/showEmails.htm?folderName=Inbox"
-							title="">Inbox</a></li>
+							title=""><b>Inbox</b></a></li>
+							
 						<li><a
 							href="${pageContext.request.contextPath}/email/showEmails.htm?folderName=Send_Item"
-							title="">Send Item</a></li>
-						<li><a class="current" href="#" title="">Settings</a></li>
+							title=""><b>Send Item</b></a></li>
+						<li><a class="current" href="#" title=""><b>Settings</b></a></li>
 
 						<c:forEach var="item" items="${sessionScope.folderForms}">
 							<li><a
 								href="${pageContext.request.contextPath}/email/showEmails.htm?folderName=${item.folder}"
-								title="${item.folder}">${item.folder}</a></li>
+								title="${item.folder}"><b>${item.folder}</b></a></li>
 						</c:forEach>
 						<!-- Folder List -->
 						<li><a href="#" title="Create Label"
-							onclick="openPupop('#createLabelPopup','#bgComposePopup');">Create
-								Label</a></li>
+							onclick="openPupop('#createLabelPopup','#bgComposePopup');"><b>Create
+								Label</b></a></li>
 					</ul>
 				</div>
 			</div>
@@ -146,32 +114,57 @@
 			<div id="right_content">
 				<ff:form
 					action="${pageContext.request.contextPath}/email/updateEmails.htm"
-					method="post">
+					method="post" id="emailsTable" name="emailsTable">
+					
+					<input type="hidden"  name="actionName"/>
+					
 					<select name="destFolder">
 						<c:forEach var="item" items="${sessionScope.folderForms}">
 							<option>${item.folder}</option>
 						</c:forEach>
 					</select>
-					<input type="submit" name="move" value="Move" />
-					<input type="submit" name="delete" value="Delete" />
-					<table>
-						<tr>
+					&nbsp;&nbsp;&nbsp;
+					<!-- <input type="submit" name="move" value="Move" /> -->
+						<a href="#" onclick="moveEmails('move');"><img src="${pageContext.request.contextPath}/images/move2.jpg" alt="" title="Move"
+					border="0" width="30" height="20"/></a>
+					&nbsp;&nbsp;
+					<a href="#" onclick="moveEmails('delete');"><img src="${pageContext.request.contextPath}/images/deleteIcon8.jpg" alt="" title="Delete"
+					border="0"   width="30" height="20"/></a>
+					 
+			<!-- 		<input type="submit" name="delete" value="Delete" /> -->
+					
+					<table border="0" width="660">
+						 <tr bgcolor="#003366" style="color:#FFFFFF;font-weight: bold;" align="center">
 							<th width="10%"></th>
 							<th width="30%">Date</th>
 							<th width="20%">From</th>
 							<th width="20%">To</th>
 							<th width="30%">Subject</th>
 						</tr>
-						<c:forEach var="item" items="${emailForms}">
-							<tr>
+						<c:forEach var="item" items="${emailForms}" varStatus="emailStatus">
+						
+						<c:choose>   
+						<c:when test="${emailStatus.index % 2 == 0 }">
+							<tr bgcolor="#f3ce7d" style="color:black;">
 								<td><input type="checkbox" name="selectedMails"
 									value="${item.MAILID}" /></td>
 								<td>${item.MAILDATE}</td>
 								<td>${item.MAILFROM}</td>
 								<td>${item.MAILTO}</td>
-								<td><a href="#">${item.SUBJECT}</a></td>
-								
+								<td><a href="${pageContext.request.contextPath}/email/showMessage.htm?MAILID=${item.MAILID}">${item.SUBJECT}</a></td>
 							</tr>
+							 </c:when>
+     					<c:otherwise>
+						  <tr bgcolor="white" style="color:black;">
+								<td><input type="checkbox" name="selectedMails"
+									value="${item.MAILID}" /></td>
+								<td>${item.MAILDATE}</td>
+								<td>${item.MAILFROM}</td>
+								<td>${item.MAILTO}</td>
+								<td><a href="${pageContext.request.contextPath}/email/showMessage.htm?MAILID=${item.MAILID}">${item.SUBJECT}</a></td>
+							</tr>
+						 </c:otherwise>
+  						</c:choose>
 						</c:forEach>
 					</table>
 				</ff:form>
@@ -219,9 +212,7 @@
 					<tr>
 						<td align="center" colspan="2"><input type="submit"
 							value="Add" class="button" /></td>
-						<!--
-	Some Dynamic Control Here
-	<input type="hidden" name="bank">   -->
+					
 					</tr>
 				</table>
 			</ff:form>

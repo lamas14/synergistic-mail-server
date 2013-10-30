@@ -1,0 +1,75 @@
+package com.synergistic.it.email.server;
+
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.synergistic.it.constant.SpringMvcNavigationCont;
+import com.synergistic.it.email.spring.form.FolderForm;
+import com.synergistic.it.service.CustomerService;
+import com.synergistic.it.util.DESedeEncryption;
+
+@Controller
+@RequestMapping("/auth")
+public class LoginController {
+
+	@Autowired
+	@Qualifier("CustomerServiceImpl")
+	private CustomerService customerService;
+	
+	
+	// this page is called when we are displaying our initial registration form
+	@RequestMapping(value = "login.htm", method = RequestMethod.GET)
+	public String showLoginPage() {
+		return SpringMvcNavigationCont.LOGIN_PAGE;
+	}
+
+	// this page is called when we are displaying our initial registration form
+	@RequestMapping(value = "sessionTimeOut.htm", method = RequestMethod.GET)
+	public String sessionTimeOut(Model model) {
+		model.addAttribute("error", "Your session is time out, please log in once again");
+		return SpringMvcNavigationCont.SESSION_TIME_OUT;
+	}
+	
+	// this page is called when we are displaying our initial registration form
+	@RequestMapping(value = "logout.htm", method = RequestMethod.GET)
+	public String logout(HttpSession session) {
+		session.invalidate();
+		return SpringMvcNavigationCont.LOGIN_PAGE;
+	}
+
+	// http://localhost:9696/synergistic-mail-server/customer/addCustomer
+
+	// this page is called when we are displaying our initial registration form
+	@RequestMapping(value = "login.htm", method = RequestMethod.POST)
+	public String postLoginPage(@RequestParam("username") String username,
+			@RequestParam("password") String password, HttpSession session,Model model) {
+		try {
+			DESedeEncryption deSedeEncryption = new DESedeEncryption();
+			password = deSedeEncryption.encrypt(password);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		String result = customerService.authUser(username, password);
+		if (result.equals("failure")) {
+			//session.setAttribute("error", "Invalid User name or Password!");
+			model.addAttribute("error", "Invalid User name or Password!");
+			return SpringMvcNavigationCont.LOGIN_PAGE;
+		} else {
+			//session.removeAttribute("error");
+			session.setAttribute(SpringMvcNavigationCont.USER_ID, username);
+			session.setAttribute(SpringMvcNavigationCont.USER_PASSWORD, password);
+			List<FolderForm> folderForms = customerService.findallfolders(username);
+			model.addAttribute("folderForms",folderForms);
+			return SpringMvcNavigationCont.USER_HOME;
+		}
+	}
+}

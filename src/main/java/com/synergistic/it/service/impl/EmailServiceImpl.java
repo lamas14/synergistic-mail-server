@@ -43,13 +43,19 @@ public class EmailServiceImpl implements EmailService {
 	}
 
 	@Override
-	public void moveEmail(String destFolder, String[] selectedMails) {
-		emailDao.moveEmails(destFolder, selectedMails);
+	public void moveEmail(String destFolder, String[] selectedMails, String userid) {
+		emailDao.moveEmails(destFolder, selectedMails, userid);
 	}
 
 	@Override
-	public void deleteEmail(String[] selectedMails) {
-		emailDao.deleteEmails(selectedMails);
+	public void deleteEmail(String[] selectedMails, String userid) {
+		emailDao.deleteEmails(selectedMails, userid);
+	}
+
+	@Override
+	public EmailEntity getEmailEntity(int mAILID, String userid) {
+		EmailEntity emailEntity = emailDao.getEmail(mAILID, userid);
+		return emailEntity;
 	}
 
 }

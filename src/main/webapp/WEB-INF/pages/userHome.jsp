@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Greefies Css Template</title>
+<title>User Home</title>
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/style.css" media="screen" />
 <%-- <link rel="stylesheet" type="text/css"
@@ -21,6 +21,8 @@
 	type="text/javascript"></script> -->
 <script src="${pageContext.request.contextPath}/js/popup.js"
 	type="text/javascript"></script>
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/photoZoom.min.js"></script>	
 <script type="text/javascript">
 	
 	  function openPupop(popupId,bgPopupId){
@@ -32,6 +34,9 @@
 	   $(document).ready(
 			//   $("#folderContent").hide();
 				function(){
+					
+					 $("#imageContainer").photoZoom();
+					  
 					$("#composePopupClose").click(function(){
 						disablePopup('#composePopup','#bgComposePopup');
 					});
@@ -70,75 +75,21 @@
 
 <body>
 	<div id="main_container">
-		<div id="header">
-			<div id="logo">
-				<a href="home.html"><img
-					src="${pageContext.request.contextPath}/images/logo.gif" alt=""
-					title="" border="0" /></a>
-			</div>
-
-			<div id="menu">
-				<ul>
-					<li><a href="home.html" title="">home</a></li>
-					<li><a href="services.html" title="">services</a></li>
-					<li><a href="#" title="">clients</a></li>
-					<li><a href="#" title="">testimonials</a></li>
-					<li><a class="current"
-						href="${pageContext.request.contextPath}/auth/logout.htm" title="">logout
-							us</a></li>
-				</ul>
-			</div>
-
-		</div>
-
-		<div class="green_box">
-			<div class="clock">
-				<img src="${pageContext.request.contextPath}/images/emaillogo.jpg"
-					alt="" title="" />
-			</div>
-			<div class="text_content">
-				<h1>Email Server welcomes you!</h1>
-				<p class="green">"This is email server through which you can
-					send email to other poeple within organization."</p>
-
-			</div>
-
-			<div id="right_nav">
-				<ul>
-					<li><a href="home.html" title="">Email Server</a></li>
-					<li><a href="services.html" title="">Database Sever</a></li>
-					<li><a class="current" href="#" title="">Settings</a></li>
-
-				</ul>
-			</div>
-
-
-		</div>
-		<!--end of green box-->
-
+	<%@ include file="emailHomeHeader.jsp" %>
 		<div id="main_content">
-			<div id="left_content">
-				<div id="left_nav">
-					<ul id="navi">
-						<li><a href="#" title="Compose"
-							onclick="openPupop('#composePopup','#bgComposePopup');">Compose</a></li>
-						<li><a
-							href="${pageContext.request.contextPath}/email/showEmails.htm?folderName=Inbox"
-							title="">Inbox</a></li>
-						<li><a
-							href="${pageContext.request.contextPath}/email/showEmails.htm?folderName=Send_Item"
-							title="">Send Item</a></li>
-						<li><a class="current" href="#" title="">Settings</a></li>
+			<div id="email_left_content">
+				<div id="email_nav">
+					<ul>
+						<li><a href="#" title="Compose"  onclick="openPupop('#composePopup','#bgComposePopup');"><b>Compose</b></a></li>
+						<li><a href="${pageContext.request.contextPath}/email/showEmails.htm?folderName=Inbox" title=""><b>Inbox</b></a></li>
+						<li><a href="${pageContext.request.contextPath}/email/showEmails.htm?folderName=Send_Item" title=""><b>Send Item</b></a></li>
+						<li><a class="current" href="#" title=""><b>Settings</b></a></li>
 
-						<c:forEach var="item" items="${sessionScope.folderForms}">
-							<li><a
-								href="${pageContext.request.contextPath}/email/showEmails.htm?folderName=${item.folder}"
-								title="${item.folder}">${item.folder}</a></li>
+						<c:forEach var="item" items="${folderForms}">
+							<li><a href="${pageContext.request.contextPath}/email/showEmails.htm?folderName=${item.folder}" title="${item.folder}"><b>${item.folder}</b></a></li>
 						</c:forEach>
 						<!-- Folder List -->
-						<li><a href="#" title="Create Label"
-							onclick="openPupop('#createLabelPopup','#bgComposePopup');">Create
-								Label</a></li>
+						<li><a href="#"  title="Create Label" onclick="openPupop('#createLabelPopup','#bgComposePopup');"><b>Create Label</b></a></li>
 					</ul>
 				</div>
 			</div>
@@ -148,6 +99,7 @@
 					<h3>${message}</h3>
 					<p>${error}</p>
 				</center>
+				</div>
 			</div>
 			<!--end of right content-->
 
@@ -197,56 +149,56 @@
 	<input type="hidden" name="bank">   -->
 					</tr>
 				</table>
-			</ff:form>
+</ff:form>
 		</p>
 	</div>
-	<div id="backgroundPopup"></div>
+	<div id="backgroundPopup"></div> --%>
 	<!-- Create Label Popup ends here -->
-	<div id="composePopup">
-		<a id="composePopupClose">x</a>
-		<h1>Compose</h1>
-		<!--  <a id="minimize">-</a>  -->
+		<div id="composePopup">
+			<a id="composePopupClose">x</a>
+				<h1>Compose</h1>
+			<!--  <a id="minimize">-</a>  -->
 		<p id="popupContact">
 			<ff:form
 				action="${pageContext.request.contextPath}/email/sentEmail.htm"
 				method="post" commandName="sentEmailForm">
 				<table align="center" size="15" border="0">
 					<tr>
-						<td>To</td>
-						<td><input type="text" name="MAILTO" id="t1" size="33" /></td>
-					</tr>
+							<td>To</td>
+							<td><input type="text" name="MAILTO" id="t1" size="33" /></td>
+						</tr>
 
-					<tr>
-						<td>Cc</td>
-						<td><input type="text" name="MAILCC" id="t1" size="33" /></td>
-					</tr>
+						<tr>
+							<td>Cc</td>
+							<td><input type="text" name="MAILCC" id="t1" size="33" /></td>
+						</tr>
 
-					<tr>
-						<td>Bcc</td>
-						<td><input type="text" name="MAILBCC" id="t3" size="33" /></td>
-					</tr>
+						<tr>
+							<td>Bcc</td>
+							<td><input type="text" name="MAILBCC" id="t3" size="33" /></td>
+						</tr>
 
-					<tr>
-						<td>Subject</td>
-						<td><input type="text" name="SUBJECT" id="t3" size="33" /></td>
-					</tr>
+			<tr>
+							<td>Subject</td>
+							<td><input type="text" name="SUBJECT" id="t3" size="33" /></td>
+						</tr>
+			
 
+						
+				<tr>
+							<td>Message</td>
+							<td>	<textarea  name="MAILDATA" id="t1" rows="4" cols="30"></textarea>
+								</td>
+						</tr>
+			<tr>
 
-
-					<tr>
-						<td>Message</td>
-						<td><textarea name="MAILDATA" id="t1" rows="4" cols="30"></textarea>
-						</td>
-					</tr>
-					<tr>
-
-						<td align="center" colspan="2"><input type="submit"
-							value="Send" class="button" /></td>
-					</tr>
-				</table>
-			</ff:form>
-		</p>
-	</div>
+							<td align="center" colspan="2"><input type="submit"
+								value="Send" class="button" /></td>
+                   </tr>
+					</table>
+				</ff:form> 
+			</p>
+		</div>
 	<div id="backgroundPopup"></div>
 
 	<!-- <script>

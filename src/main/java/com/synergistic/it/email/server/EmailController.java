@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.synergistic.it.constant.SpringMvcNavigationCont;
 import com.synergistic.it.email.spring.form.EmailForm;
+import com.synergistic.it.hibernate.entity.EmailEntity;
 import com.synergistic.it.service.EmailService;
 import com.synergistic.it.util.DateUtils;
 
@@ -65,26 +66,37 @@ public class EmailController {
 
 	@RequestMapping(value = "updateEmails.htm", method = RequestMethod.POST)
 	public String moveEmails(@RequestParam("destFolder") String destFolder,
-			Model model, HttpServletRequest request) {
+			Model model, HttpServletRequest request, HttpSession session) {
 		String[] selectedMails = request.getParameterValues("selectedMails");
-		if (request.getParameter("delete") != null) {
+		String actionName=request.getParameter("actionName");
+		String userid = (String) session.getAttribute(SpringMvcNavigationCont.USER_ID);
+		if ("delete".equalsIgnoreCase(actionName)) {
 			if (selectedMails == null) {
 				model.addAttribute("error", "No emails were selected to delete");
 				return SpringMvcNavigationCont.USER_HOME;
 			}
-			emailService.deleteEmail(selectedMails);
+			emailService.deleteEmail(selectedMails, userid);
 			model.addAttribute("message", "Emails deleted");
 		}
-		if (request.getParameter("move") != null) {
+		if ("move".equalsIgnoreCase(actionName)) {
 			if (selectedMails == null) {
-				model.addAttribute("error", "No emails were selected to move to "
-						+ destFolder);
+				model.addAttribute("error",
+						"No emails were selected to move to " + destFolder);
 				return SpringMvcNavigationCont.USER_HOME;
 			}
 			model.addAttribute("message", "Emails moved to " + destFolder);
-			emailService.moveEmail(destFolder, selectedMails);
+			emailService.moveEmail(destFolder, selectedMails, userid);
 		}
 		return SpringMvcNavigationCont.USER_HOME;
+	}
+
+	@RequestMapping(value = "showMessage.htm", method = RequestMethod.GET)
+	public String showMessage(HttpServletRequest request, Model model, HttpSession session) {
+		String userid = (String) session.getAttribute(SpringMvcNavigationCont.USER_ID);
+		int MAILID = Integer.parseInt(request.getParameter("MAILID"));
+		EmailEntity emailEntity = emailService.getEmailEntity(MAILID, userid);
+		model.addAttribute("emailContent", emailEntity);
+		return SpringMvcNavigationCont.SHOW_MESSAGE;
 	}
 
 }

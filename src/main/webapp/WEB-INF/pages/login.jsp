@@ -2,31 +2,35 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Greefies Css Template</title>
-<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/style.css" media="screen" />
+<title>Login</title>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/style.css" media="screen" />
 
 
 <script type="text/javascript">
-	function submitForm() {
-		if (document.loginForm.username.value == "") {
-			alert("User Name should be left blank");
-			document.loginForm.username.focus();
-			return false;
-		}
-		if (!/^[a-zA-Z0-9]*$/.test(document.loginForm.username.value)) {
-			alert("User Name should not contain special characters like @!*&");
-			document.loginForm.username.focus();
-			return false;
-		}
-		if (document.loginForm.password.value == "") {
-			alert("Password should be left blank");
-			document.loginForm.password.focus();
-			return false;
-		}
-		document.forms[0].submit();
 
-	}
+   function clearMessage(){
+	   document.getElementById('message').innerHTML="";
+   }
+
+  function  submitForm() {
+	  var pusername=document.forms[0].username.value;
+	  var ppassword=document.forms[0].password.value;
+	  if(pusername.length==0){
+		  alert("Username cannot be blank");
+		  document.forms[0].username.focus();
+		  return;
+	  }	
+	  if(ppassword.length==0){
+		  alert("Password cannot be blank");
+		  document.forms[0].ppassword.focus();
+		  return;
+	  }	
+	  document.forms[0].submit();
+	  username
+	  
+  }
+
+
 </script>
 
 </head>
@@ -35,92 +39,63 @@
 	<div id="main_container">
 		<div id="header">
 			<div id="logo">
-				<a href="home.html"><img
-					src="${pageContext.request.contextPath}/images/logo.gif" alt=""
-					title="" border="0" /></a>
+				<a href="home.html"><img src="${pageContext.request.contextPath}/images/shlogo.jpg" alt="" title=""
+					border="0" /></a>
 			</div>
 
 			<div id="menu">
 				<ul>
-					<li><a href="home.html" title="">home</a></li>
-					<li><a href="services.html" title="">services</a></li>
-					<li><a href="#" title="">clients</a></li>
-					<li><a href="#" title="">testimonials</a></li>
-					<li><a class="current" href="contact.html" title="">contact
-							us</a></li>
+					<li><a href="home.html" title="">Home</a></li>
+					<li><a href="#" title="">College</a></li>
+					<li><a href="#" title="">Facebook</a></li>
+					<li><a href="#" title="">Gmail</a></li>
+					<li><a href="#" title="">Road Map</a></li>
+					<li><a href="#" title="">About Us</a></li>
+					
 				</ul>
 			</div>
 
 		</div>
-
-		<div class="green_box">
-			<div class="clock">
-				<img src="${pageContext.request.contextPath}/images/emaillogo.jpg"
-					alt="" title="" />
-			</div>
-			<div class="text_content">
-				<h1>Email Server welcomes you!</h1>
-				<p class="green">"This is email server through which you can
-					send email to other poeple within organization."</p>
-
-			</div>
-
-			<div id="right_nav">
-				<ul>
-					<li><a href="home.html" title="">Email Server</a></li>
-					<li><a href="services.html" title="">Database Sever</a></li>
-					<li><a class="current" href="#" title="">Settings</a></li>
-
-				</ul>
-			</div>
-
-
-		</div>
-		<!--end of green box-->
+		<br/>
+		
 
 		<div id="main_content">
 			<div id="left_content">
-				<img src="${pageContext.request.contextPath}/images/loginpage.png"
-					alt="" title="" border="0" /> <br />
-				<h3>
-					<font color="black">This application is under construction!</font>
-				</h3>
+				<img src="${pageContext.request.contextPath}/images/loginpage.png" alt="" title=""
+					border="0" />
+
+                <br/>
+                	<h3><font color="black">This application is under construction!</font></h3>
 			</div>
 			<!--end of left content-->
 
 
-			<div id="right_content">
-				<h3 align="center">
-					<font color="black">++++Login Form+++</font>
-				</h3>
+			<div id="loginright_content">
 				
-				<h3 align="center">
-					<font color="black">${error}</font>
-				</h3>
-				<form name="loginForm"
-					action="${pageContext.request.contextPath}/auth/login.htm"
-					method="post">
+	           <h3 align="center"><font color="black">Sign in to continue to synergisticit email </font></h3>
+	           
+	           <h3 align="center"><font color="red"><span id="message">${error}</span></font></h3>
+				
+				<form name="loginForm" action="login.htm" method="post">
 					<div id="contact_form">
 						<div class="form_row">
-							<label><font color="blue"><b>User ID:</b></font></label><input
-								type="text" name="username" class="contact_input" 
-								style="width:120px;"/><label>@synergisticit.com</label>
+							<label><font color="black"><b>Login:</b></font></label><input type="text" name="username"
+								class="contact_input" onkeypress="clearMessage();"/>
 						</div>
 
 						<div class="form_row">
-							<label><font color="blue"><b>Password:</b></font></label><input
-								type="password" name="password" class="contact_input" />
+							<label><font color="black"><b>Password:</b></font></label><input type="password" name="password"
+								class="contact_input" onkeypress="clearMessage();"/>
 						</div>
 
 						<div class="send">
 							<a href="#" onclick="submitForm();">Sign in</a>
-							<a href="${pageContext.request.contextPath}/customer/addCustomer.htm" >register</a>
 						</div>
-
+				<center><img src="${pageContext.request.contextPath}/images/login7.jpg" alt="right" title=""
+					border="0" /></center>
 					</div>
 
 				</form>
-
 
 
 			</div>
@@ -135,9 +110,8 @@
 
 		<div id="footer">
 			<div class="copyright">
-				<a href="home.html"><img
-					src="${pageContext.request.contextPath}/images/footer_logo.gif"
-					border="0" alt="" title="" /></a>
+				<a href="home.html"><img src="${pageContext.request.contextPath}/images/footer_logo.gif" border="0"
+					alt="" title="" /></a>
 			</div>
 			<div class="footer_links">
 				<a href="#">About us</a> <a href="privacy.html">Privacy policy</a> <a

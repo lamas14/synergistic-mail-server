@@ -21,6 +21,7 @@ public class FolderDaoImpl extends HibernateDaoSupport implements FolderDao{
 		super.setSessionFactory(sessionFactory);
 	}
 	
+	@SuppressWarnings("unchecked")
 	@Override
 	public boolean addFolder(String userName, String folderName) {
 		List<FolderEntity> folderEntities = getHibernateTemplate().find(
@@ -39,6 +40,7 @@ public class FolderDaoImpl extends HibernateDaoSupport implements FolderDao{
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<FolderEntity> findFolders(String userName) {
 		List<FolderEntity> entities = getHibernateTemplate().find("from FolderEntity as fe where fe.uName=?", userName);

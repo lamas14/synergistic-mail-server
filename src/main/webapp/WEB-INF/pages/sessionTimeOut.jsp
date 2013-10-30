@@ -32,18 +32,14 @@
                 	<h3><font color="black">This application is under construction!</font></h3>
 			</div>
 			<!--end of left content-->
-
-
-			<div id="right_content">
+			<div id="login_right_content">
 	         <h1 align="center"><font color="red"><span id="message">${error}</span></font></h1>
-				<br/>				
 				<center><a href="${pageContext.request.contextPath}/auth/login.htm" ><b>Click here to Login</b></a></center>
 				<center>
 				<img src="${pageContext.request.contextPath}/images/lock.jpg" alt="right" title=""
-					border="0" /></center>
+					border="0"/></center>
 			</div>
 			<!--end of right content-->
-
 			<div style="clear: both;"></div>
 		</div>
 		<!--end of main content-->
@@ -60,11 +56,7 @@
 					href="http://www.webpagedesign.com.au">Art for the web</a>
 
 			</div>
-
-
 		</div>
-
-
 
 	</div>
 	<!--end of main container-->

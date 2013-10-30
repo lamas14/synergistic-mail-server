@@ -1,0 +1,34 @@
+package com.synergistic.it.dao.impl;
+
+import java.util.List;
+
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+import org.springframework.stereotype.Repository;
+
+import com.synergistic.it.constant.EMailServerConstant;
+import com.synergistic.it.dao.EmailDao;
+import com.synergistic.it.hibernate.entity.CustomerEntity;
+import com.synergistic.it.hibernate.entity.EmailEntity;
+
+@Repository("EmailDaoImpl")
+public class EmailDaoImpl extends HibernateDaoSupport  implements EmailDao {
+
+	@Autowired
+	@Qualifier("psessionFactory")
+	public void injectSessionFactory(SessionFactory sessionFactory){
+		super.setSessionFactory(sessionFactory);
+	}
+
+
+	@Override
+	public String uploadEmails(EmailEntity emailEntity) {
+		 getHibernateTemplate().save(emailEntity);
+			return EMailServerConstant.SUCCESS;
+	}
+
+
+
+}

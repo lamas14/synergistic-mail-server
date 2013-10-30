@@ -10,11 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.synergistic.it.dao.CustomerDao;
 import com.synergistic.it.email.spring.form.CustomerForm;
-import com.synergistic.it.email.spring.form.EmailForm;
-import com.synergistic.it.email.spring.form.FolderForm;
 import com.synergistic.it.hibernate.entity.CustomerEntity;
-import com.synergistic.it.hibernate.entity.EmailEntity;
-import com.synergistic.it.hibernate.entity.FolderEntity;
 import com.synergistic.it.service.CustomerService;
 
 @Service("CustomerServiceImpl")
@@ -50,6 +46,10 @@ public class CustomerServiceImpl implements CustomerService {
 		return customerForms;
 	}
 
+	@Override
+	public byte[] findImageByUserId(String userid) {
+		return customerDao.findImageByUserId(userid);
+	}
 	
 
 }

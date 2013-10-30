@@ -1,7 +1,11 @@
 package com.synergistic.it.email.server;
 
+import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -77,6 +81,21 @@ public class LoginController {
 			List<FolderForm> folderForms = folderService.findallfolders(username);
 			session.setAttribute("folderForms",folderForms);
 			return SpringMvcNavigationCont.USER_HOME;
+		}
+	}
+	@RequestMapping(value = "loadImageById.htm", method = RequestMethod.GET)
+	public void loadImageById(HttpServletRequest request,
+			HttpServletResponse response) {
+		String userid = request.getParameter("userid");
+		// System.out.println("ALBUM ID IS:" +albumId);
+		byte[] byteArray = customerService.findImageByUserId(userid);
+		response.setContentType("image/jpeg");
+		response.setContentType("image/png");
+		try {
+			ServletOutputStream out = response.getOutputStream();
+			out.write(byteArray);
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 	}
 }

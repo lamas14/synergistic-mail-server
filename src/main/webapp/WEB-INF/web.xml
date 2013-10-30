@@ -7,12 +7,12 @@
 
 <context-param>
     <param-name>allowAccess</param-name>
-    <param-value>/auth/login.htm,/customer/addCustomer.htm,/auth/sessionTimeOut.htm,/customer/uploadImage.htm</param-value>
+    <param-value>/auth/login.htm,/customer/addCustomer.htm,/customer/uploadImage.htm,/auth/sessionTimeOut.htm</param-value>
   </context-param>
 
   <!-- Time is in minutes -->
   <session-config>
-        <session-timeout>15</session-timeout>
+        <session-timeout>5</session-timeout>
   </session-config>
   
     <filter>

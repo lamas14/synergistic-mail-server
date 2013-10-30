@@ -1,3 +1,6 @@
+tr.odd {background-color: #EEDDEE}
+tr.even {background-color: #EEEEDD}
+
 body {
 background-color: #D7DFE2;
 margin:0px;
@@ -69,19 +72,27 @@ margin:auto;
 padding:15px 0 0 30px;
 float:left;
 }
+
+#errormenu{
+width:900px;
+height:42px;
+padding:0px;
+clear:both;
+background-color:red;
+}
 /*----------------------menu-------------------------*/
 #menu{
 width:900px;
 height:42px;
 padding:0px;
 clear:both;
-background-color:#416271;
+background-color:#092285;
 }
 #menu ul{
 list-style:none;padding:0 0 0 230px;margin: auto;display:block;
 }
 #menu ul li{
-list-style:none;display:inline;float:left;width:auto;height:42px;padding:0px;line-height:42px; font-family:Arial, Helvetica, sans-serif; font-size:13px;
+list-style:none;display:inline;float:left;width:auto;height:42px;padding:0px;line-height:42px; font-family:Arial, Helvetica, sans-serif; font-size:14px;
 }
 #menu ul li a{
 height:42px; width: auto;float:left;text-decoration:none;padding:0 0 0 25px; margin:0px 3px 0px 3px;color:#fff;text-align:center;
@@ -96,7 +107,7 @@ height:42px;width: auto;float:left;text-decoration:none;padding:0px;color: #fff;
 /*----------------middle green box-----------*/
 .green_box{
 width:900px;
-height:140px;
+height:120px;
 clear:both;
 background:url(images/green_box_bg.gif) no-repeat left #50a842;
 background-position:50px 0px;
@@ -157,13 +168,56 @@ height:auto;
 clear:both;
 }
 #left_content{
-width:320px;
+width:410px;
 height:auto;
 margin:10px;
 float:left;
 padding:10px;
 background:url(images/left_content_bg.gif) repeat-x top;
 }
+
+#faculity_left_content{
+width:210px;
+height:auto;
+margin:10px;
+float:left;
+padding:10px;
+background:url(images/left_content_bg.gif) repeat-x top;
+}
+
+#leaveh_left_content{
+width:110px;
+height:auto;
+margin:10px;
+float:left;
+padding:10px;
+background:url(images/left_content_bg.gif) repeat-x top;
+}
+#leaveh_right_content{
+width:700px;
+height:auto;
+margin:10px 0 0 0;
+float:right;
+padding:10px;
+}
+
+
+#faculity_right_content{
+width:600px;
+height:auto;
+margin:10px 0 0 0;
+float:right;
+padding:10px;
+}
+
+#loginright_content{
+width:400px;
+height:auto;
+margin:10px 0 0 0;
+float:right;
+padding:10px;
+}
+
 #right_content{
 width:490px;
 height:auto;
@@ -172,8 +226,9 @@ float:left;
 padding:10px;
 }
 /*----------------------top right navigation-------------------------*/
+
 #right_nav{
-width:263px;height: auto;padding:20px 0 0 50px; float:left;
+width:263px;height: auto;padding:2px 0 0 50px; float:right;
 }
 #right_nav ul{
 list-style:none;margin: auto;display:block; padding:0px;
@@ -393,3 +448,36 @@ color: #fff;
 
 
 
+/*----------------------top right navigation-------------------------*/
+
+#email_nav{
+width:1px;height: auto;padding:2px 0 0 0px; float:left;
+}
+#email_nav ul{
+list-style:none;margin: auto;display:block; padding:0px;
+}
+#email_nav ul li{
+list-style:none;display:block;width:auto;height:29px;padding:0px;line-height:29px;
+}
+#email_nav ul li a{
+height:29px;display:block; width:150px;text-decoration:none;padding:0 0 0 35px; margin:7px 0 7px 0;color:black;background:url(images/right_nav.gif) no-repeat center;
+background-position:0px 0px;
+}
+#email_nav ul li a:hover{
+height:29px;display:block;width:150px;text-decoration:none;color: black;padding:0 0 0 35px;margin:7px 0 7px 0; background:url(images/right_nav_a.gif) no-repeat center;
+background-position:0px 0px;
+}
+#email_nav ul li a.current{
+height:29px;display:block;width:150px;text-decoration:none;padding:0px;color: yellow;padding:0 0 0 35px;margin:7px 0 7px 0; 
+background:url(images/right_nav_a.gif) no-repeat center;
+background-position:0px 0px;
+}
+
+#email_left_content{
+width:210px;
+height:auto;
+margin:1px;
+float:left;
+padding:1px;
+background:url(images/left_content_bg.gif) repeat-x top;
+}
