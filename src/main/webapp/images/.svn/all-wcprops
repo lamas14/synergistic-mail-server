@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/images
+/svn/!svn/ver/5/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/images
 END
 logo.jpg
 K 25
@@ -9,11 +9,23 @@ svn:wc:ra_dav:version-url
 V 102
 /svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/images/logo.jpg
 END
+emailglobe.jpg
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/6/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/images/emailglobe.jpg
+END
 right_nav_a.gif
 K 25
 svn:wc:ra_dav:version-url
 V 109
 /svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/images/right_nav_a.gif
+END
+move.jpg
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/6/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/images/move.jpg
 END
 emaillogo.jpg
 K 25
@@ -21,17 +33,17 @@ svn:wc:ra_dav:version-url
 V 107
 /svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/images/emaillogo.jpg
 END
-news_icon.gif
-K 25
-svn:wc:ra_dav:version-url
-V 107
-/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/images/news_icon.gif
-END
 loginpage.png
 K 25
 svn:wc:ra_dav:version-url
 V 107
 /svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/images/loginpage.png
+END
+news_icon.gif
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/images/news_icon.gif
 END
 left_content_bg.gif
 K 25
@@ -39,17 +51,23 @@ svn:wc:ra_dav:version-url
 V 113
 /svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/images/left_content_bg.gif
 END
+box_icon.gif
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/images/box_icon.gif
+END
 logo.gif
 K 25
 svn:wc:ra_dav:version-url
 V 102
 /svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/images/logo.gif
 END
-box_icon.gif
+move2.jpg
 K 25
 svn:wc:ra_dav:version-url
-V 106
-/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/images/box_icon.gif
+V 103
+/svn/!svn/ver/6/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/images/move2.jpg
 END
 login1.jpg
 K 25
@@ -57,17 +75,23 @@ svn:wc:ra_dav:version-url
 V 104
 /svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/images/login1.jpg
 END
+read_more_bg.gif
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/images/read_more_bg.gif
+END
 search.gif
 K 25
 svn:wc:ra_dav:version-url
 V 104
 /svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/images/search.gif
 END
-read_more_bg.gif
+email22.jpg
 K 25
 svn:wc:ra_dav:version-url
-V 110
-/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/images/read_more_bg.gif
+V 105
+/svn/!svn/ver/6/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/images/email22.jpg
 END
 left_nav_arrow.gif
 K 25
@@ -75,17 +99,23 @@ svn:wc:ra_dav:version-url
 V 112
 /svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/images/left_nav_arrow.gif
 END
+deleteIcon3.jpg
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/6/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/images/deleteIcon3.jpg
+END
 clock.png
 K 25
 svn:wc:ra_dav:version-url
 V 103
 /svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/images/clock.png
 END
-footer_logo.gif
+login7.jpg
 K 25
 svn:wc:ra_dav:version-url
-V 109
-/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/images/footer_logo.gif
+V 104
+/svn/!svn/ver/6/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/images/login7.jpg
 END
 menu_arrow.gif
 K 25
@@ -93,11 +123,23 @@ svn:wc:ra_dav:version-url
 V 108
 /svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/images/menu_arrow.gif
 END
+footer_logo.gif
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/images/footer_logo.gif
+END
 contact_info_bg.gif
 K 25
 svn:wc:ra_dav:version-url
 V 113
 /svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/images/contact_info_bg.gif
+END
+deleteIcon8.jpg
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/6/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/images/deleteIcon8.jpg
 END
 green_box_bg.gif
 K 25
@@ -105,29 +147,29 @@ svn:wc:ra_dav:version-url
 V 110
 /svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/images/green_box_bg.gif
 END
-phone_icon.gif
-K 25
-svn:wc:ra_dav:version-url
-V 108
-/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/images/phone_icon.gif
-END
 right_nav.gif
 K 25
 svn:wc:ra_dav:version-url
 V 107
 /svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/images/right_nav.gif
 END
-Thumbs.db
+phone_icon.gif
 K 25
 svn:wc:ra_dav:version-url
-V 103
-/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/images/Thumbs.db
+V 108
+/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/images/phone_icon.gif
 END
 orange_bullet.gif
 K 25
 svn:wc:ra_dav:version-url
 V 111
 /svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/images/orange_bullet.gif
+END
+Thumbs.db
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/images/Thumbs.db
 END
 testimonials_icon.gif
 K 25
@@ -189,11 +231,29 @@ svn:wc:ra_dav:version-url
 V 116
 /svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/images/read_more_bg_white.gif
 END
+email13.jpg
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/6/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/images/email13.jpg
+END
+shlogo.jpg
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/6/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/images/shlogo.jpg
+END
 pic1.jpg
 K 25
 svn:wc:ra_dav:version-url
 V 102
 /svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/images/pic1.jpg
+END
+images7.jpg
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/6/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/images/images7.jpg
 END
 pic2.jpg
 K 25
@@ -201,9 +261,21 @@ svn:wc:ra_dav:version-url
 V 102
 /svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/images/pic2.jpg
 END
+email15.jpg
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/6/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/images/email15.jpg
+END
 pic3.jpg
 K 25
 svn:wc:ra_dav:version-url
 V 102
 /svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/images/pic3.jpg
+END
+email_header.jpg
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/6/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/images/email_header.jpg
 END

@@ -17,6 +17,8 @@
 		<import resource="spring-hibernate.xml"/>	
 		<import resource="image-upload.xml"/>
 		<import resource="t-spring-soap.xml"/>
+		<import resource="spring-hibernate-tx.xml"/>
+		<import resource="spring-aop-message.xml"/>
 		
 </beans>	
 		

@@ -1,4 +1,4 @@
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td
+/*html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td
 	{
 	border: 0pt none;
 	font-family: inherit;
@@ -8,7 +8,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 	margin: 0pt;
 	padding: 0pt;
 	vertical-align: baseline;
-}
+}*/
 
 /* body {
 	background: #fff none repeat scroll 0%;
@@ -18,7 +18,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 	margin: 0pt;
 	height: 100%;
 } */
-table {
+/*table {
 	border-collapse: separate;
 	border-spacing: 0pt;
 }
@@ -26,7 +26,7 @@ table {
 caption,th,td {
 	font-weight: normal;
 	text-align: left;
-}
+}*/
 
 blockquote:before,blockquote:after,q:before,q:after {
 	content: "";
@@ -424,6 +424,39 @@ br.both {
 	outline: none;
 }
 
+#changeProfileButton {
+	width: 100%;
+	background: #61CA2F;
+	border: 1px solid #61CA2F;
+	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+	-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+	color: white;
+	cursor: pointer;
+	display: inline-block;
+	font-family: inherit;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 1;
+	margin: 0;
+	padding: 10px 20px 11px;
+	text-align: center;
+	text-decoration: none;
+	-webkit-transition: background-color 0.15s ease-in-out;
+	-moz-transition: background-color 0.15s ease-in-out;
+	-o-transition: background-color 0.15s ease-in-out;
+}
+
+
+#changeProfileButton:hover,.button:focus {
+	color: white;
+	background-color: #D81919;
+}
+
+#changeProfileButton.success {
+	background-color: #5da423;
+	border: 1px solid #396516;
+}
 /*------------------------------------------------------------popup ends---*/
 #logo {
 	width: 800px;
@@ -477,20 +510,21 @@ br.both {
 	margin-bottom: 10px;
 }
 
-table,td,tr {
+/*table,td,tr {
 	border: 1px solid black;
 	font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
 		"Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 	padding: 5px;
-}
+}*/
 
+/*
 #body {
 	width: 800px;
 	height: auto;
 	font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
 		"Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 	margin: 0 auto;
-}
+} */
 
 #navribbon li {
 	float: left;
@@ -615,7 +649,8 @@ table,td,tr {
 	color: white;
 	margin-top: 20px;
 } */
-h1,h2,h3,h4,h5,h6 {
+
+/*h1,h2,h3,h4,h5,h6 {
 	font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 	font-weight: bold;
 	font-style: normal;
@@ -624,14 +659,14 @@ h1,h2,h3,h4,h5,h6 {
 	line-height: 1.1;
 	margin-bottom: 14px;
 	margin-top: 14px;
-}
+}*/
 
 h1 small,h2 small,h3 small,h4 small,h5 small,h6 small {
 	font-size: 60%;
 	color: #6f6f6f;
 	line-height: 0;
 }
-
+/*
 h1 {
 	font-size: 44px;
 }
@@ -655,7 +690,8 @@ h5 {
 h6 {
 	font-size: 14px;
 }
-
+ */
+ 
 hr {
 	border: solid #ddd;
 	border-width: 1px 0 0;
@@ -697,6 +733,7 @@ deletebutton:hover {
 /*------------------------------------------------------------------------------*/
 
 /* Tables ---------------------- */
+/* 
 table {
 	background: #fff;
 	-webkit-border-radius: 3px;
@@ -708,6 +745,8 @@ table {
 	border: 1px solid #ddd;
 }
 
+*/
+/*
 table thead,table tfoot {
 	background: #f5f5f5;
 }
@@ -749,9 +788,12 @@ table tbody tr td {
 	vertical-align: top;
 	border: none;
 }
+  */
+
 /* Normal Buttons ---------------------- */
 .button {
 	width: auto;
+	height:25px;
 	background: #2f99ca;
 	border: 1px solid #1e728c;
 	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
@@ -761,11 +803,11 @@ table tbody tr td {
 	cursor: pointer;
 	display: inline-block;
 	font-family: inherit;
-	font-size: 14px;
+	font-size: 10px;
 	font-weight: bold;
 	line-height: 1;
 	margin: 0;
-	padding: 10px 20px 11px;
+	padding: 4px 20px 11px;
 	text-align: center;
 	text-decoration: none;
 	-webkit-transition: background-color 0.15s ease-in-out;
@@ -919,6 +961,74 @@ table tbody tr td {
 	outline: none;
 }
 
+/* CSS for new label popup */
+#passwordPopup {
+	display: none;
+	position: fixed;
+	_position: absolute; /* hack for internet explorer 6*/
+	height: 384px;
+	width: 408px;
+	background: #FFFFFF;
+	border: 2px solid #cecece;
+	z-index: 2;
+	padding: 12px;
+	font-size: 13px;
+}
+
+#passwordPopup h1 {
+	text-align: left;
+	color: #6FA5FD;
+	font-size: 22px;
+	font-weight: 700;
+	border-bottom: 1px dotted #D3D3D3;
+	padding-bottom: 2px;
+	margin-bottom: 20px;
+}
+
+#passwordPopupClose {
+	font-size: 14px;
+	line-height: 14px;
+	right: 6px;
+	top: 4px;
+	position: absolute;
+	color: #6fa5fd;
+	font-weight: 700;
+	display: block;
+}
+/* CSS for new label popup */
+#profilePopup {
+	display: none;
+	position: fixed;
+	_position: absolute; /* hack for internet explorer 6*/
+	height: 384px;
+	width: 408px;
+	background: #FFFFFF;
+	border: 2px solid #cecece;
+	z-index: 2;
+	padding: 12px;
+	font-size: 13px;
+}
+
+#profilePopup h1 {
+	text-align: left;
+	color: #6FA5FD;
+	font-size: 22px;
+	font-weight: 700;
+	border-bottom: 1px dotted #D3D3D3;
+	padding-bottom: 2px;
+	margin-bottom: 20px;
+}
+
+#profilePopupClose {
+	font-size: 14px;
+	line-height: 14px;
+	right: 6px;
+	top: 4px;
+	position: absolute;
+	color: #6fa5fd;
+	font-weight: 700;
+	display: block;
+}
 /* CSS for composePopup popup */
 #composePopup {
 	display: none;
@@ -988,3 +1098,39 @@ table tbody tr td {
 	font-weight: 700;
 	display: block;
 }
+
+/* CREATE Summary popup */
+#showSummaryPopup {
+	display: none;
+	position: fixed;
+	_position: absolute; /* hack for internet explorer 6*/
+	height: 200px;
+	width: 408px;
+	background: #FFFFFF;
+	border: 2px solid #cecece;
+	z-index: 2;
+	padding: 12px;
+	font-size: 13px;
+}
+
+#showSummaryPopup h1 {
+	text-align: left;
+	color: #6FA5FD;
+	font-size: 22px;
+	font-weight: 700;
+	border-bottom: 1px dotted #D3D3D3;
+	padding-bottom: 2px;
+	margin-bottom: 20px;
+}
+
+#showSummaryPopupClose {
+	font-size: 14px;
+	line-height: 14px;
+	right: 6px;
+	top: 4px;
+	position: absolute;
+	color: #6fa5fd;
+	font-weight: 700;
+	display: block;
+}
+

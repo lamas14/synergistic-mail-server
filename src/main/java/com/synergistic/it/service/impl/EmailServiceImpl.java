@@ -30,20 +30,24 @@ public class EmailServiceImpl implements EmailService {
 	}
 
 	@Override
-	public List<EmailForm> getEmails(String userid, String folderName) {
+	public List<EmailForm> getEmails(String userid, String folderName,
+			int page) {
 		List<EmailEntity> emailEntities = emailDao.findEmails(userid,
-				folderName);
+				folderName, page);
 		List<EmailForm> emailForms = new ArrayList<EmailForm>();
-		for (EmailEntity emailEntity : emailEntities) {
-			EmailForm ef = new EmailForm();
-			BeanUtils.copyProperties(emailEntity, ef);
-			emailForms.add(ef);
+		if (emailEntities != null) {
+			for (EmailEntity emailEntity : emailEntities) {
+				EmailForm ef = new EmailForm();
+				BeanUtils.copyProperties(emailEntity, ef);
+				emailForms.add(ef);
+			}
 		}
 		return emailForms;
 	}
 
 	@Override
-	public void moveEmail(String destFolder, String[] selectedMails, String userid) {
+	public void moveEmail(String destFolder, String[] selectedMails,
+			String userid) {
 		emailDao.moveEmails(destFolder, selectedMails, userid);
 	}
 

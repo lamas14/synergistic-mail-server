@@ -1,13 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 116
-/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/java/com/synergistic/it/email/server
+/svn/!svn/ver/5/trunk/synergistic-email-server/synergistic-mail-server/src/main/java/com/synergistic/it/email/server
 END
 FolderController.java
 K 25
 svn:wc:ra_dav:version-url
 V 138
-/svn/!svn/ver/5/trunk/synergistic-email-server/synergistic-mail-server/src/main/java/com/synergistic/it/email/server/FolderController.java
+/svn/!svn/ver/6/trunk/synergistic-email-server/synergistic-mail-server/src/main/java/com/synergistic/it/email/server/FolderController.java
 END
 Main.java
 K 25
@@ -27,11 +27,17 @@ svn:wc:ra_dav:version-url
 V 125
 /svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/java/com/synergistic/it/email/server/Dog.java
 END
+ChangeProfileController.java
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/!svn/ver/6/trunk/synergistic-email-server/synergistic-mail-server/src/main/java/com/synergistic/it/email/server/ChangeProfileController.java
+END
 EmailController.java
 K 25
 svn:wc:ra_dav:version-url
 V 137
-/svn/!svn/ver/5/trunk/synergistic-email-server/synergistic-mail-server/src/main/java/com/synergistic/it/email/server/EmailController.java
+/svn/!svn/ver/6/trunk/synergistic-email-server/synergistic-mail-server/src/main/java/com/synergistic/it/email/server/EmailController.java
 END
 Master.java
 K 25
@@ -43,5 +49,5 @@ LoginController.java
 K 25
 svn:wc:ra_dav:version-url
 V 137
-/svn/!svn/ver/5/trunk/synergistic-email-server/synergistic-mail-server/src/main/java/com/synergistic/it/email/server/LoginController.java
+/svn/!svn/ver/6/trunk/synergistic-email-server/synergistic-mail-server/src/main/java/com/synergistic/it/email/server/LoginController.java
 END

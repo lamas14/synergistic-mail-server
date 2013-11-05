@@ -14,13 +14,13 @@ import com.synergistic.it.hibernate.entity.FolderEntity;
 public interface CustomerDao {
 	public String uploadCustomer(CustomerEntity customerEntity);
 
-	public String authUser(String username, String password);
+	public CustomerEntity authUser(String username, String password);
 
 	public List<CustomerEntity> findUsers();
 
-	public boolean addFolder(String userName, String folderName);
-
-	public List<FolderEntity> findFolders(String userName);
-
-	public List<EmailEntity> findEmails(String folder);
+	public byte[] findImageByUserId(String userid);
+	
+	public String saveCustomer(CustomerEntity customerEntity);
+	 
+	public CustomerEntity findUserById(String userid);
 }

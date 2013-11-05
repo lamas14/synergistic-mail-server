@@ -9,17 +9,17 @@ svn:wc:ra_dav:version-url
 V 137
 /svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/java/com/synergistic/it/email/spring/form/FolderForm.java
 END
-CustomerForm.java
-K 25
-svn:wc:ra_dav:version-url
-V 139
-/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/java/com/synergistic/it/email/spring/form/CustomerForm.java
-END
 SentEmailForm.java
 K 25
 svn:wc:ra_dav:version-url
 V 140
 /svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/java/com/synergistic/it/email/spring/form/SentEmailForm.java
+END
+CustomerForm.java
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/java/com/synergistic/it/email/spring/form/CustomerForm.java
 END
 EmailForm.java
 K 25

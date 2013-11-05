@@ -36,10 +36,12 @@ public class EmailDaoImpl extends HibernateDaoSupport implements EmailDao {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<EmailEntity> findEmails(String userid, String folderName) {
+	public List<EmailEntity> findEmails(String userid, String folderName, int page) {
+		
 		List<EmailEntity> entities = new ArrayList<EmailEntity>();
 		List<SentEmailEntity> sentEmailEntities = new ArrayList<SentEmailEntity>();
-
+		int startIndex = 10*page;
+		int endIndex = startIndex +10;
 		/*
 		 * Checking Sent Emails Table Match Condition: from== userid and
 		 * folderName == clicked folder
@@ -48,6 +50,12 @@ public class EmailDaoImpl extends HibernateDaoSupport implements EmailDao {
 				.find("from SentEmailEntity as ee where ee.MAILFROM=? and ee.FOLDER=?",
 						userid, folderName);
 		if (folderName.equals("Send_Item")) {
+			if(sentEmailEntities.size()<startIndex){
+				return null;
+			}
+			if(sentEmailEntities.size()<endIndex){
+				endIndex = sentEmailEntities.size();
+			}
 			for (SentEmailEntity sentEmailEntity : sentEmailEntities) {
 				EmailEntity emailEntity = new EmailEntity();
 				BeanUtils.copyProperties(sentEmailEntity, emailEntity);
@@ -60,15 +68,18 @@ public class EmailDaoImpl extends HibernateDaoSupport implements EmailDao {
 		 */
 		else {
 			entities = getHibernateTemplate().find(
-					"from EmailEntity as ee where ee.MAILTO=? and ee.FOLDER=?",
-					userid, folderName);
-			for (SentEmailEntity sentEmailEntity : sentEmailEntities) {
-				EmailEntity emailEntity = new EmailEntity();
-				BeanUtils.copyProperties(sentEmailEntity, emailEntity);
-				entities.add(emailEntity);
+					"from EmailEntity as ee where ee.MAILTO=? and ee.FOLDER=? or ee.MAILFROM=? and ee.FOLDER=?",
+					userid, folderName, userid, "Send_Item");
+			
+			if(entities.size()<startIndex){
+				return null;
 			}
+			if(entities.size()<endIndex){
+				endIndex = entities.size();
+			}
+			
 		}
-		return entities;
+		return entities.subList(startIndex, endIndex);
 	}
 
 	@SuppressWarnings("unchecked")
@@ -88,6 +99,7 @@ public class EmailDaoImpl extends HibernateDaoSupport implements EmailDao {
 			List<EmailEntity> entities = (List<EmailEntity>) getHibernateTemplate()
 					.find("from EmailEntity as ee where ee.MAILID=? and ee.MAILTO=?",
 							current, userid);
+			entities.addAll(getHibernateTemplate().find("from EmailEntity as ee where ee.MAILID=? and ee.MAILFROM=?", current, userid));
 			if (entities != null && entities.size() > 0) {
 				entities.get(0).setFOLDER(destFolder);
 				getHibernateTemplate().update(entities.get(0));
@@ -102,8 +114,11 @@ public class EmailDaoImpl extends HibernateDaoSupport implements EmailDao {
 					.find("from SentEmailEntity as ee where ee.MAILID=? and ee.MAILFROM=?",
 							current, userid);
 			if (sentEmailEntities != null && sentEmailEntities.size() > 0) {
-				sentEmailEntities.get(0).setFOLDER(destFolder);
-				getHibernateTemplate().update(sentEmailEntities.get(0));
+				EmailEntity entity = new EmailEntity();
+				sentEmailEntities.get(0).setFOLDER("Send_Item");
+				BeanUtils.copyProperties(sentEmailEntities.get(0), entity);
+				getHibernateTemplate().save(entity);
+				getHibernateTemplate().delete(sentEmailEntities.get(0));
 			}
 		}
 	}

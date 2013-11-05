@@ -34,8 +34,14 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
-	public String authUser(String username, String password) {
-		return customerDao.authUser(username, password);
+	public CustomerForm authUser(String username, String password) {
+		 CustomerEntity customerEntity=customerDao.authUser(username, password);
+		 if(customerEntity==null){
+			 return null;
+		 }
+		 CustomerForm customerForm = new CustomerForm();
+		BeanUtils.copyProperties(customerEntity, customerForm);
+		return customerForm;
 	}
 
 	@Override
@@ -51,35 +57,23 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
-	public boolean addFolder(String userName, String folderName) {
-		return customerDao.addFolder(userName, folderName);
+	public byte[] findImageByUserId(String userid) {
+		return customerDao.findImageByUserId(userid);
 	}
-
-	public List<FolderForm> findallfolders(String userName) {
-		List<FolderEntity> folderEntities = customerDao.findFolders(userName);
-		List<FolderForm> folderForms = new ArrayList<FolderForm>();
-		for (FolderEntity folderEntity : folderEntities) {
-			FolderForm folderForm = new FolderForm();
-			BeanUtils.copyProperties(folderEntity, folderForm);
-			folderForms.add(folderForm);
-		}
-		return folderForms;
-	}
-
+	
 	@Override
-	public List<EmailForm> getEmails(String folder) {
-		List<EmailEntity> emailEntities = customerDao.findEmails(folder);
-		List<EmailForm> emailForms = new ArrayList<EmailForm>();
-		for (EmailEntity emailEntity : emailEntities) {
-			EmailForm ef = new EmailForm();
-			BeanUtils.copyProperties(emailEntity, ef);
-			emailForms.add(ef);
-		}
-		return emailForms;
+	public String saveCustomer(CustomerForm customerForm) {
+		CustomerEntity customerEntity=new CustomerEntity();
+		BeanUtils.copyProperties(customerForm, customerEntity);
+		String result=customerDao.saveCustomer(customerEntity);
+		return result;
 	}
-
-	
-
-	
+	@Override
+	public CustomerForm findUserById(String userid) {
+		CustomerEntity customerEntity=customerDao.findUserById(userid);
+		CustomerForm customerForm= new CustomerForm();
+		BeanUtils.copyProperties(customerEntity, customerForm);
+		return customerForm;
+	}
 
 }

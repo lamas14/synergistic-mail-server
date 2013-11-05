@@ -4,10 +4,16 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	id="WebApp_ID" version="2.5">
 
+<!--
+ registering the listener to track how many users are currently logged in into the system
+ -->
+<listener>
+<listener-class>com.synergistic.it.email.server.listener.UserSessionVO</listener-class>
+</listener>
 
 <context-param>
     <param-name>allowAccess</param-name>
-    <param-value>/auth/login.htm,/customer/addCustomer.htm,/auth/sessionTimeOut.htm</param-value>
+    <param-value>/auth/login.htm,/customer/addCustomer.htm,/auth/sessionTimeOut.htm,/customer/uploadImage.htm</param-value>
   </context-param>
 
   <!-- Time is in minutes -->

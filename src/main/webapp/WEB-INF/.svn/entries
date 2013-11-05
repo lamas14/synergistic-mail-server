@@ -1,14 +1,14 @@
 10
 
 dir
-3
+5
 https://synergistic-email-server.googlecode.com/svn/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/WEB-INF
 https://synergistic-email-server.googlecode.com/svn
 
 
 
-2013-10-28T17:42:28.502228Z
-3
+2013-10-28T21:47:52.126661Z
+5
 nagendra.synergisticit@gmail.com
 
 
@@ -32,47 +32,13 @@ dir
 context
 dir
 
-web.xml
-file
-5
-
-
-
-2013-10-28T21:14:49.203617Z
-ea74985eac7d2f6cf8c579b9d8b7211c
-2013-10-28T21:47:52.126661Z
-5
-nagendra.synergisticit@gmail.com
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2533
-
 email-server-servlet.xml
 file
 
 
 
 
-2013-10-23T17:45:18.237304Z
+2013-10-30T21:42:08.441406Z
 b43bfe3a9bad848bb67d40cee1008684
 2013-10-28T17:42:28.502228Z
 3
@@ -99,4 +65,38 @@ nagendra.synergisticit@gmail.com
 
 
 1671
+
+web.xml
+file
+6
+
+
+
+2013-10-30T19:03:02.429687Z
+800236affd1492826f5a2b4ab8150f95
+2013-10-30T21:44:20.942825Z
+6
+nagendra.synergisticit@gmail.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2770
 

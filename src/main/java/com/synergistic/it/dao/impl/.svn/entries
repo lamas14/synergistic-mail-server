@@ -1,7 +1,7 @@
 10
 
 dir
-3
+5
 https://synergistic-email-server.googlecode.com/svn/trunk/synergistic-email-server/synergistic-mail-server/src/main/java/com/synergistic/it/dao/impl
 https://synergistic-email-server.googlecode.com/svn
 
@@ -26,16 +26,16 @@ nagendra.synergisticit@gmail.com
 
 7654aa21-2ba2-d135-5ebf-8c189c3cfef0
 
-CustomerDaoImpl.java
+FolderDaoImpl.java
 file
+6
 
 
 
-
-2013-10-28T17:26:16.882328Z
-c99faba58b40a742ee07d8468ff8e65f
-2013-10-28T17:42:28.502228Z
-3
+2013-10-29T18:31:07.252929Z
+12b0ebd41179a42ebf5fce92e99cf7e5
+2013-10-30T21:44:20.942825Z
+6
 nagendra.synergisticit@gmail.com
 
 
@@ -58,18 +58,52 @@ nagendra.synergisticit@gmail.com
 
 
 
-2917
+1617
+
+CustomerDaoImpl.java
+file
+6
+
+
+
+2013-10-30T18:30:43.420898Z
+5f2d604773e30d318b0a21b4b2da4a87
+2013-10-30T21:44:20.942825Z
+6
+nagendra.synergisticit@gmail.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2750
 
 EmailDaoImpl.java
 file
+6
 
 
 
-
-2013-10-28T17:08:25.493656Z
-a93320a503541599439a27e393050612
-2013-10-28T17:42:28.502228Z
-3
+2013-10-29T18:31:07.654296Z
+ba3c480740d43a490fcb49be7f341e29
+2013-10-30T21:44:20.942825Z
+6
 nagendra.synergisticit@gmail.com
 
 
@@ -92,5 +126,5 @@ nagendra.synergisticit@gmail.com
 
 
 
-1014
+2549
 

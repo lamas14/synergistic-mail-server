@@ -1,0 +1,22 @@
+	<div id="showSummaryPopup" onclick="closePupop('#showSummaryPopup','#bgComposePopup');">
+		<a id="showSummaryPopupClose">x</a>
+		<h1><span id="fromUserId">Manish Kumar</span></h1>
+		<p id="popupContact" >
+		<ff:form
+				action="${pageContext.request.contextPath}/folder/addFolder.htm"
+				method="post">
+				<table align="center" border="0">
+					<tr>
+						<td valign="top">manish.kumar@gmail.com</td>
+						<td><img src="${pageContext.request.contextPath}/images/email13.jpg" alt="" title=""
+					border="0"  align="right" height="110"/></td>
+					</tr>
+					<tr>
+						<td align="center" colspan="2">
+						<input type="submit"
+							value="Friends" class="button" /></td>
+					</tr>
+				</table>
+			</ff:form>	
+		</p>
+	</div>

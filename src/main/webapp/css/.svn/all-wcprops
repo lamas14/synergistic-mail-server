@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 90
-/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/css
+/svn/!svn/ver/5/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/css
 END
 master.css
 K 25
@@ -15,17 +15,17 @@ svn:wc:ra_dav:version-url
 V 102
 /svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/css/welcome.css
 END
-banks.css
-K 25
-svn:wc:ra_dav:version-url
-V 100
-/svn/!svn/ver/5/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/css/banks.css
-END
 footer.css
 K 25
 svn:wc:ra_dav:version-url
 V 101
 /svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/css/footer.css
+END
+banks.css
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/6/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/css/banks.css
 END
 form.css
 K 25
@@ -33,17 +33,17 @@ svn:wc:ra_dav:version-url
 V 99
 /svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/css/form.css
 END
-popup.css
-K 25
-svn:wc:ra_dav:version-url
-V 100
-/svn/!svn/ver/5/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/css/popup.css
-END
 reset1.css
 K 25
 svn:wc:ra_dav:version-url
 V 101
 /svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/css/reset1.css
+END
+popup.css
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/5/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/css/popup.css
 END
 286142.css
 K 25

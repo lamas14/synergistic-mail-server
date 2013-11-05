@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 112
-/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/java/com/synergistic/it/constant
+/svn/!svn/ver/5/trunk/synergistic-email-server/synergistic-mail-server/src/main/java/com/synergistic/it/constant
 END
 EmailSpringApplicationContext.java
 K 25
@@ -13,11 +13,11 @@ EMailServerConstant.java
 K 25
 svn:wc:ra_dav:version-url
 V 137
-/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/java/com/synergistic/it/constant/EMailServerConstant.java
+/svn/!svn/ver/6/trunk/synergistic-email-server/synergistic-mail-server/src/main/java/com/synergistic/it/constant/EMailServerConstant.java
 END
 SpringMvcNavigationCont.java
 K 25
 svn:wc:ra_dav:version-url
 V 141
-/svn/!svn/ver/5/trunk/synergistic-email-server/synergistic-mail-server/src/main/java/com/synergistic/it/constant/SpringMvcNavigationCont.java
+/svn/!svn/ver/6/trunk/synergistic-email-server/synergistic-mail-server/src/main/java/com/synergistic/it/constant/SpringMvcNavigationCont.java
 END

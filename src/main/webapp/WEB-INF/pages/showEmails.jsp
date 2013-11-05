@@ -90,17 +90,17 @@ function moveEmails(param){
 						<li><a href="#" title="Compose"
 							onclick="openPupop('#composePopup','#bgComposePopup');"><b>Compose</b></a></li>
 						<li><a
-							href="${pageContext.request.contextPath}/email/showEmails.htm?folderName=Inbox"
+							href="${pageContext.request.contextPath}/email/showEmails.htm?folderName=Inbox&show=next&page=0"
 							title=""><b>Inbox</b></a></li>
 							
 						<li><a
-							href="${pageContext.request.contextPath}/email/showEmails.htm?folderName=Send_Item"
+							href="${pageContext.request.contextPath}/email/showEmails.htm?folderName=Send_Item&show=next&page=0"
 							title=""><b>Send Item</b></a></li>
 						<li><a class="current" href="#" title=""><b>Settings</b></a></li>
 
 						<c:forEach var="item" items="${sessionScope.folderForms}">
 							<li><a
-								href="${pageContext.request.contextPath}/email/showEmails.htm?folderName=${item.folder}"
+								href="${pageContext.request.contextPath}/email/showEmails.htm?folderName=${item.folder}&show=next&page=0"
 								title="${item.folder}"><b>${item.folder}</b></a></li>
 						</c:forEach>
 						<!-- Folder List -->
@@ -132,7 +132,17 @@ function moveEmails(param){
 					border="0"   width="30" height="20"/></a>
 					 
 			<!-- 		<input type="submit" name="delete" value="Delete" /> -->
-					
+					<c:if test="${firstPage == false}">
+						<a
+							href="${pageContext.request.contextPath}/email/showEmails.htm?folderName=${currentFolder}&show=previous&page=${page}"><img
+							src="${pageContext.request.contextPath}/images/previous.png" /></a>
+					</c:if>
+					<c:if test="${lastPage == false}">
+						<a
+							href="${pageContext.request.contextPath}/email/showEmails.htm?folderName=${currentFolder}&show=next&page=${page}"><img
+							src="${pageContext.request.contextPath}/images/next.png" /></a>
+					</c:if>
+
 					<table border="0" width="660">
 						 <tr bgcolor="#003366" style="color:#FFFFFF;font-weight: bold;" align="center">
 							<th width="10%"></th>
@@ -168,6 +178,7 @@ function moveEmails(param){
 						</c:forEach>
 					</table>
 				</ff:form>
+				<div align="center">Page ${page}</div>
 			</div>
 			<!--end of right content-->
 
@@ -201,7 +212,7 @@ function moveEmails(param){
 		<h1>Create Label</h1>
 		<p id="popupContact">
 			<ff:form
-				action="${pageContext.request.contextPath}/auth/addFolder.htm"
+				action="${pageContext.request.contextPath}/folder/addFolder.htm"
 				method="post">
 
 				<table align="center" border="0">

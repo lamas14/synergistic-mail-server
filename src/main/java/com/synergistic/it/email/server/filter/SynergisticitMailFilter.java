@@ -37,7 +37,7 @@ public class SynergisticitMailFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		HttpServletRequest request2=(HttpServletRequest)request;
 		String url=request2.getServletPath();
-		System.out.println("Request2= "+url);
+		//System.out.println("Request2= "+url);
 		if(allowedUrls.contains(url) ) {
 			chain.doFilter(request, response);	///Go to requested resource no need to validate session
 		} else{

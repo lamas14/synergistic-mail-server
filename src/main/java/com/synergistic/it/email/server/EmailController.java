@@ -56,10 +56,31 @@ public class EmailController {
 
 	@RequestMapping(value = "showEmails.htm", method = RequestMethod.GET)
 	public String showEmails(@RequestParam("folderName") String folderName,
-			HttpSession session, Model model) {
+			@RequestParam("page") int page,@RequestParam("show") String show, HttpSession session, Model model) {
+		
+		if(show.equals("previous")){
+			page -=2;
+		}
 		String userid = (String) session
 				.getAttribute(SpringMvcNavigationCont.USER_ID);
-		List<EmailForm> emailForms = emailService.getEmails(userid, folderName);
+		List<EmailForm> emailForms = emailService.getEmails(userid, folderName, page);
+		
+		//Checking if its last page
+		if(emailForms.size()<10){
+			model.addAttribute("lastPage", true);
+		}else{
+			model.addAttribute("lastPage", false);
+		}
+		
+		//Checking if its first page
+		if(page==0){
+			model.addAttribute("firstPage", true);
+		}else{
+			model.addAttribute("firstPage", false);
+		}
+		
+		model.addAttribute("page", page+1);
+		model.addAttribute("currentFolder", folderName);
 		model.addAttribute("emailForms", emailForms);
 		return SpringMvcNavigationCont.SHOW_EMAILS;
 	}
@@ -68,8 +89,9 @@ public class EmailController {
 	public String moveEmails(@RequestParam("destFolder") String destFolder,
 			Model model, HttpServletRequest request, HttpSession session) {
 		String[] selectedMails = request.getParameterValues("selectedMails");
-		String actionName=request.getParameter("actionName");
-		String userid = (String) session.getAttribute(SpringMvcNavigationCont.USER_ID);
+		String actionName = request.getParameter("actionName");
+		String userid = (String) session
+				.getAttribute(SpringMvcNavigationCont.USER_ID);
 		if ("delete".equalsIgnoreCase(actionName)) {
 			if (selectedMails == null) {
 				model.addAttribute("error", "No emails were selected to delete");
@@ -91,8 +113,10 @@ public class EmailController {
 	}
 
 	@RequestMapping(value = "showMessage.htm", method = RequestMethod.GET)
-	public String showMessage(HttpServletRequest request, Model model, HttpSession session) {
-		String userid = (String) session.getAttribute(SpringMvcNavigationCont.USER_ID);
+	public String showMessage(HttpServletRequest request, Model model,
+			HttpSession session) {
+		String userid = (String) session
+				.getAttribute(SpringMvcNavigationCont.USER_ID);
 		int MAILID = Integer.parseInt(request.getParameter("MAILID"));
 		EmailEntity emailEntity = emailService.getEmailEntity(MAILID, userid);
 		model.addAttribute("emailContent", emailEntity);

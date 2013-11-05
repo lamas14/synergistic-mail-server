@@ -38,14 +38,15 @@ public class CustomerDaoImpl extends HibernateDaoSupport implements CustomerDao 
 	}
 
 	@Override
-	public String authUser(String username, String password) {
+	public CustomerEntity authUser(String username, String password) {
 		List<CustomerEntity> entities = getHibernateTemplate()
 				.find("from CustomerEntity as  ce where ce.userid=? and ce.password=?",
 						username, password);
 		if (entities != null && entities.size() > 0) {
-			return EMailServerConstant.SUCCESS;
+			//return EMailServerConstant.SUCCESS;
+			return entities.get(0);
 		} else {
-			return EMailServerConstant.FAILURE;
+			return null;
 		}
 	}
 
@@ -57,32 +58,33 @@ public class CustomerDaoImpl extends HibernateDaoSupport implements CustomerDao 
 	}
 
 	@Override
-	public boolean addFolder(String userName, String folderName) {
-		List<FolderEntity> folderEntities = getHibernateTemplate().find(
-				"from FolderEntity as fe where fe.uName=? and fe.folder=?",
-				userName, folderName);
-		if (folderEntities != null && folderEntities.size() > 0) {
-			return false;
+	public byte[] findImageByUserId(String userid){		
+		List<CustomerEntity> customerEntities=getHibernateTemplate().find("from CustomerEntity as ce where ce.userid=?",userid);
+		if(customerEntities!=null  && customerEntities.size()==1){
+			return customerEntities.get(0).getPhoto();
 		}else{
-			FolderEntity entity = new FolderEntity();
-			entity.setFolder(folderName);
-			entity.setuName(userName);
-			entity.setDoe(DateUtils.getCurrentDateInSQLFormat());
-			entity.setDom(DateUtils.getCurrentDateInSQLFormat());
-			getHibernateTemplate().save(entity);
-			return true;
+			return new byte[]{};
 		}
 	}
-
 	@Override
-	public List<FolderEntity> findFolders(String userName) {
-		List<FolderEntity> entities = getHibernateTemplate().find("from FolderEntity as fe where fe.uName=?", userName);
-		return entities;
+	public CustomerEntity findUserById(String userid) {
+		// TODO Auto-generated method stub
+		List<CustomerEntity> entities = getHibernateTemplate().find("from CustomerEntity where userid=?",userid);
+		if(entities!=null && entities.size()>0){
+			return  entities.get(0);
+		}else{
+			return  null;
+		}
+		
+		
 	}
-
+		
+	
+	
 	@Override
-	public List<EmailEntity> findEmails(String folder) {
-		List<EmailEntity> entities = getHibernateTemplate().find("from EmailEntity as ee where ee.FOLDER=?",folder);
-		return entities;
+	public String saveCustomer(CustomerEntity customerEntity) {
+		  getHibernateTemplate().update(customerEntity);
+		  return EMailServerConstant.SUCCESS;
+		 
 	}
 }

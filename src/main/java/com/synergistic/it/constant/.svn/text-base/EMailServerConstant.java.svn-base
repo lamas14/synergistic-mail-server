@@ -1,6 +1,12 @@
 package com.synergistic.it.constant;
 
+/**
+ * 
+ * @author yadna01
+ *
+ */
 public interface EMailServerConstant {
 	static final public String SUCCESS="success"; 
 	static final public String FAILURE="failure"; 
+	static final public String USER_SESSION_VO="userSessionVO";
 }

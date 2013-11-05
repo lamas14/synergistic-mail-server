@@ -3,15 +3,27 @@ svn:wc:ra_dav:version-url
 V 111
 /svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/java/com/synergistic/it/service
 END
-CustomerService.java
-K 25
-svn:wc:ra_dav:version-url
-V 132
-/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/java/com/synergistic/it/service/CustomerService.java
-END
 SentEmailService.java
 K 25
 svn:wc:ra_dav:version-url
 V 133
 /svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/java/com/synergistic/it/service/SentEmailService.java
+END
+CustomerService.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/!svn/ver/6/trunk/synergistic-email-server/synergistic-mail-server/src/main/java/com/synergistic/it/service/CustomerService.java
+END
+EmailService.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/!svn/ver/6/trunk/synergistic-email-server/synergistic-mail-server/src/main/java/com/synergistic/it/service/EmailService.java
+END
+FolderService.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/!svn/ver/6/trunk/synergistic-email-server/synergistic-mail-server/src/main/java/com/synergistic/it/service/FolderService.java
 END

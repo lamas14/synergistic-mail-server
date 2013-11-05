@@ -90,9 +90,16 @@
 
 						<div class="send">
 							<a href="#" onclick="submitForm();">Sign in</a>
+							
 						</div>
-				<center><img src="${pageContext.request.contextPath}/images/login7.jpg" alt="right" title=""
-					border="0" /></center>
+
+				<center>
+					<a href="${pageContext.request.contextPath}/customer/addCustomer.htm"><img src="${pageContext.request.contextPath}/images/register1.jpg" alt="right" title=""
+					border="0" />
+					</a>
+					<img src="${pageContext.request.contextPath}/images/emailglobe.jpg" alt="right" title=""
+					border="0"/>
+					</center>
 					</div>
 
 				</form>

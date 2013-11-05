@@ -12,5 +12,7 @@ public interface SpringMvcNavigationCont {
 	public static final String SESSION_TIME_OUT = "sessionTimeOut";
 	public static final String SHOW_EMAILS = "showEmails";
 	public static final String SHOW_MESSAGE = "showMessage";
+	public static final String CHAT_HISTORY_LIST = "chatHistoryList";
+	public static final String SHOW_HISTORY = "showHistory";
 
 }

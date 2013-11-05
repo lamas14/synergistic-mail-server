@@ -81,16 +81,16 @@
 						<li><a href="#" title="Compose"
 							onclick="openPupop('#composePopup','#bgComposePopup');"><b>Compose</b></a></li>
 						<li><a
-							href="${pageContext.request.contextPath}/email/showEmails.htm?folderName=Inbox"
+							href="${pageContext.request.contextPath}/email/showEmails.htm?folderName=Inbox&show=next&page=0"
 							title=""><b>Inbox</b></a></li>
 						<li><a
-							href="${pageContext.request.contextPath}/email/showEmails.htm?folderName=Send_Item"
+							href="${pageContext.request.contextPath}/email/showEmails.htm?folderName=Send_Item&show=next&page=0"
 							title=""><b>Send Item</b></a></li>
 						<li><a class="current" href="#" title=""><b>Settings</b></a></li>
 
 						<c:forEach var="item" items="${sessionScope.folderForms}">
 							<li><a
-								href="${pageContext.request.contextPath}/email/showEmails.htm?folderName=${item.folder}"
+								href="${pageContext.request.contextPath}/email/showEmails.htm?folderName=${item.folder}&show=next&page=0"
 								title="${item.folder}"><b>${item.folder}</b></a></li>
 						</c:forEach>
 						<!-- Folder List -->
@@ -143,7 +143,7 @@
 		<h1>Create Label</h1>
 		<p id="popupContact">
 			<ff:form
-				action="${pageContext.request.contextPath}/auth/addFolder.htm"
+				action="${pageContext.request.contextPath}/folder/addFolder.htm"
 				method="post">
 
 				<table align="center" border="0">

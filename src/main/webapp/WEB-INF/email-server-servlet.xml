@@ -20,6 +20,13 @@
 	<context:component-scan base-package="com.synergistic.it.email.server" />
 
 
+  <!-- 
+   it enable restful annotations also helps your controller to generated
+   difference response like = XML ,JSON, HTML,XML/Feed
+   -->
+  <mvc:annotation-driven />
+
+
 	<!-- Declare a view resolver XMLViewResolver -->
 	<!-- The InternalResourceViewResolver will have rules defined to resolve 
 		the view names.

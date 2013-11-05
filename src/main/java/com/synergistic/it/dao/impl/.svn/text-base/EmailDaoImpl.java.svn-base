@@ -1,5 +1,6 @@
 package com.synergistic.it.dao.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.SessionFactory;
@@ -10,25 +11,67 @@ import org.springframework.stereotype.Repository;
 
 import com.synergistic.it.constant.EMailServerConstant;
 import com.synergistic.it.dao.EmailDao;
-import com.synergistic.it.hibernate.entity.CustomerEntity;
 import com.synergistic.it.hibernate.entity.EmailEntity;
 
 @Repository("EmailDaoImpl")
-public class EmailDaoImpl extends HibernateDaoSupport  implements EmailDao {
+public class EmailDaoImpl extends HibernateDaoSupport implements EmailDao {
 
 	@Autowired
 	@Qualifier("psessionFactory")
-	public void injectSessionFactory(SessionFactory sessionFactory){
+	public void injectSessionFactory(SessionFactory sessionFactory) {
 		super.setSessionFactory(sessionFactory);
 	}
 
-
 	@Override
 	public String uploadEmails(EmailEntity emailEntity) {
-		 getHibernateTemplate().save(emailEntity);
-			return EMailServerConstant.SUCCESS;
+		getHibernateTemplate().save(emailEntity);
+		return EMailServerConstant.SUCCESS;
 	}
 
+	@Override
+	public List<EmailEntity> findEmails(String userid, String folderName) {
+		List<EmailEntity> entities = new ArrayList<EmailEntity>();
 
+		if (folderName.equals("Send_Item")) {
+			entities = getHibernateTemplate().find(
+					"from EmailEntity as ee where ee.MAILFROM=?",
+					userid);
+		} else {
+			entities = getHibernateTemplate().find(
+					"from EmailEntity as ee where ee.MAILTO=? and ee.FOLDER=?",
+					userid, folderName);
+		}
+		return entities;
+	}
+
+	@Override
+	public void moveEmails(String destFolder, String[] selectedMails) {
+		int length = selectedMails.length;
+		int current;
+		for(int i = 0; i < length; i++){
+			current = Integer.parseInt(selectedMails[i]);
+			List<EmailEntity> entities = (List<EmailEntity>) getHibernateTemplate().find("from EmailEntity as ee where ee.MAILID=?", current);
+			
+			entities.get(0).setFOLDER(destFolder);
+			getHibernateTemplate().update(entities.get(0));
+		}
+	}
+
+	@Override
+	public void deleteEmails(String[] selectedMails) {
+		int length = selectedMails.length;
+		int current;
+		for(int i = 0; i < length; i++){
+			current = Integer.parseInt(selectedMails[i]);
+			List<EmailEntity> entities = (List<EmailEntity>) getHibernateTemplate().find("from EmailEntity as ee where ee.MAILID=?", current);
+			getHibernateTemplate().delete(entities.get(0));
+		}
+	}
+
+	@Override
+	public EmailEntity getEmail(int mAILID) {
+		List<EmailEntity> entities = (List<EmailEntity>) getHibernateTemplate().find("from EmailEntity as ee where ee.MAILID=?",mAILID);
+		return entities.get(0);
+	}
 
 }

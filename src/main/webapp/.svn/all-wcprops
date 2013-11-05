@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 86
-/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp
+/svn/!svn/ver/5/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp
 END
 privacy.html
 K 25
@@ -15,17 +15,17 @@ svn:wc:ra_dav:version-url
 V 102
 /svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/departments.jsp
 END
-index.jsp
-K 25
-svn:wc:ra_dav:version-url
-V 96
-/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/index.jsp
-END
 userHome.jsp
 K 25
 svn:wc:ra_dav:version-url
 V 99
 /svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/userHome.jsp
+END
+index.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/index.jsp
 END
 services.html
 K 25
@@ -37,7 +37,13 @@ style.css
 K 25
 svn:wc:ra_dav:version-url
 V 96
-/svn/!svn/ver/3/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/style.css
+/svn/!svn/ver/6/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/style.css
+END
+style1.css
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/6/trunk/synergistic-email-server/synergistic-mail-server/src/main/webapp/style1.css
 END
 home.html
 K 25

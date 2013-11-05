@@ -1,7 +1,7 @@
 10
 
 dir
-3
+5
 https://synergistic-email-server.googlecode.com/svn/trunk/synergistic-email-server/synergistic-mail-server/src/main/java/com/synergistic/it/service
 https://synergistic-email-server.googlecode.com/svn
 
@@ -29,47 +29,13 @@ nagendra.synergisticit@gmail.com
 impl
 dir
 
-CustomerService.java
-file
-
-
-
-
-2013-10-28T17:26:36.963382Z
-8655b49f86fcee1e0127e140c07021a1
-2013-10-28T17:42:28.502228Z
-3
-nagendra.synergisticit@gmail.com
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-713
-
 SentEmailService.java
 file
 
 
 
 
-2013-10-28T17:08:50.930179Z
+2013-10-30T21:42:01.374023Z
 45825969e24c5c9dd7dcd163ffe195f8
 2013-10-28T17:42:28.502228Z
 3
@@ -96,4 +62,106 @@ nagendra.synergisticit@gmail.com
 
 
 239
+
+CustomerService.java
+file
+6
+
+
+
+2013-10-30T18:30:58.502929Z
+ff1bf2341e4e02e42169e474b55805a1
+2013-10-30T21:44:20.942825Z
+6
+nagendra.synergisticit@gmail.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+706
+
+EmailService.java
+file
+6
+
+
+
+2013-10-29T18:32:10.800781Z
+3d97f5439485df5eec66f66d7d14e18e
+2013-10-30T21:44:20.942825Z
+6
+nagendra.synergisticit@gmail.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+517
+
+FolderService.java
+file
+6
+
+
+
+2013-10-29T18:32:10.730468Z
+76cee7f21c9e3769322ef6458423ad22
+2013-10-30T21:44:20.942825Z
+6
+nagendra.synergisticit@gmail.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+284
 
