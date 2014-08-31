@@ -1,8 +1,0 @@
-.nametd {
-	background: url(../images/down.png) no-repeat 20% center;
-	cursor: pointer;
-	
-}
-.close {
-	background-image: url(../images/up.png);
-}
